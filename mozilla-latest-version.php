@@ -38,3 +38,6 @@ add_shortcode('mozilla-latest-download-url', array('Mozlv_Shortcode', 'get_lates
 add_shortcode('mozilla-latest-langpack-url', array('Mozlv_Shortcode', 'get_latest_langpack_URL'));
 add_shortcode('mozilla-latest-changelog-url', array('Mozlv_Shortcode', 'get_latest_changelog_URL'));
 add_shortcode('mozilla-latest-requirements-url', array('Mozlv_Shortcode', 'get_latest_requirements_URL'));
+add_shortcode('moz-download-version', array('Mozlv_Shortcode', 'moz_download_version_handler'));
+add_shortcode('moz-download-url', array('Mozlv_Shortcode', 'moz_download_url_handler'));
+add_shortcode('moz-download-rn', array('Mozlv_Shortcode', 'moz_download_rn_handler'));
