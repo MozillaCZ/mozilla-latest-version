@@ -37,7 +37,7 @@ class Mozlv_Settings_Page {
 						<option value="%2$s"%3$s>WordPress Transients API</option>
 						<option value="%4$s"%5$s>Files</option>
 					</select>
-					<p class="description">You can choose from two options. WordPress Transients API cache uses database to store the informations about the application version.</p>
+					<p class="description">You can choose from two options. WordPress Transients API cache uses database to store the informations about the application version, or Files.</p>
 				</td>
 			</tr>
 			',
@@ -52,7 +52,7 @@ class Mozlv_Settings_Page {
 				<th><label for="%1$s">Cache expiration</label></th>
 				<td>
 					<input type="number" name="%1$s" id="%1$s" min="0" value="%2$s" required>
-					<p class="description">This option set the cache expiration in seconds (default 3600 = 1 hour).</p>
+					<p class="description">This option sets the cache expiration in seconds (default 3600 = 1 hour).</p>
 				</td>
 			</tr>
 			',
@@ -86,21 +86,27 @@ class Mozlv_Settings_Page {
 
 	private function main_howto() {
 		print('
-			<p>There are currently four shortcodes added by this plugin. Here are explained all of them with their attributes.</p>
+			<p>There are currently four shortcodes added by this plugin. And three more additional for easier migration from the Mozilla.sk CMS Plugin without need of any content change. Here are explained all of them with their attributes.</p>
 			<h3 class="title">Shortcodes</h3>
-			<ul>
-				<li><code>[mozilla-latest-version product="<em>product</em>" channel="<em>channel</em>"]</code> - the latest version number in <em>channel</em> of the specified <em>product</em></li>
-				<li><code>[mozilla-latest-download-url product="<em>product</em>" channel="<em>channel</em>" platform="<em>platform</em>"]</code> - download URL of the latest version of the specified <em>product</em> in <em>channel</em> for <em>platform</em></li>
-				<li><code>[mozilla-latest-langpack-url product="<em>product</em>" channel="<em>channel</em>" platform="<em>platform</em>"]</code> - download URL of the latest langpack (.xpi) for the specified <em>product</em> in <em>channel</em> and <em>platform</em> (not available for <code>mobile</code>)</li>
-				<li><code>[mozilla-latest-changelog-url product="<em>product</em>" channel="<em>channel</em>"]</code> - changelog page URL for the latest version of the specified <em>product</em> in <em>channel</em></li>
-				<li><code>[mozilla-latest-requirements-url product="<em>product</em>" channel="<em>channel</em>"]</code> - requirements page URL for the latest version of the specified <em>product</em> in <em>channel</em></li>
-			</ul>
 			<p class="description">All URLs (where posible) will contain the language code specified above.</p>
+			<ul>
+				<li><code>[mozilla-latest-version product="<em>product</em>"]</code> - the latest version number of the specified <em>product</em></li>
+				<li><code>[mozilla-latest-download-url product="<em>product</em>" platform="<em>platform</em>"]</code> - download URL of the latest version of the specified <em>product</em> for <em>platform</em></li>
+				<li><code>[mozilla-latest-langpack-url product="<em>product</em>" platform="<em>platform</em>"]</code> - download URL of the latest langpack (.xpi) for the specified <em>product</em> and <em>platform</em> (not available for <code>fennec</code>)</li>
+				<li><code>[mozilla-latest-changelog-url product="<em>product</em>"]</code> - changelog page URL for the latest version of the specified <em>product</em></li>
+				<li><code>[mozilla-latest-requirements-url product="<em>product</em>"]</code> - requirements page URL for the latest version of the specified <em>product</em></li>
+			</ul>
+			<h4>Shortcodes for easier migration from the Mozilla.sk CMS Plugin</h4>
+			<ul>
+				<li><code>[moz-download-version app="<em>product</em>"]</code> = <code>[mozilla-latest-version product="<em>product</em>"]</code></li>
+				<li><code>[moz-download-url app="<em>product</em>" platform="<em>platform</em>"]</code> = <code>[mozilla-latest-download-url product="<em>product</em>" platform="<em>platform</em>"]</code></li>
+				<li><code>[moz-download-rn app="<em>product</em>"]</code> = <code>[mozilla-latest-changelog-url product="<em>product</em>"]</code></li>
+			</ul>
 			<h3 class="title">Attributes</h3>
 			<ul>
-				<li><code>product</code> possible values are <code>firefox</code> for desktop, <code>mobile</code> for Android, <code>thunderbird</code> and <code>seamonkey</code></li>
+				<li><code>product</code> possible values are <code>firefox</code> for desktop, <code>fennec</code> or <code>mobile</code> for Android, <code>thunderbird</code> and <code>seamonkey</code></li>
 				<li><code>platform</code> specifies the platform for download links. Possible values are <code>win</code>, <code>lin</code> and <code>mac</code></li>
-				<li><code>channel</code> specifies the channel of product are is product dependent (if no specified, release will be used)</li>
+				<li><code>channel</code> specifies the channel of product are is product dependent (if no specified, <code>release</code> will be used)</li>
 			</ul>
 			<h3 class="title">Channel</h3>
 			<ul>

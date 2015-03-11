@@ -12,6 +12,7 @@ class Mozlv_Product_Factory {
 				}
 				return self::$products[$product];
 				break;
+			case 'fennec':
 			case 'mobile':
 				if(!isset(self::$products[$product])) {
 					self::$products[$product] = new Mozlv_Product_Mobile();
