@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Firefox product class.
+ * 
+ * @author Michal Stanke <michal.stanke@mikk.cz>
+ */
 class Mozlv_Product_Firefox extends Mozlv_Product_Class {
 
 	protected $json_URL = 'https://www.mozilla.org/includes/product-details/json/firefox_versions.json';

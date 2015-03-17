@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Firefox for Android product class.
+ * 
+ * @author Michal Stanke <michal.stanke@mikk.cz>
+ */
 class Mozlv_Product_Mobile extends Mozlv_Product_Class {
 
 	protected $json_URL = 'https://www.mozilla.org/includes/product-details/json/mobile_details.json';

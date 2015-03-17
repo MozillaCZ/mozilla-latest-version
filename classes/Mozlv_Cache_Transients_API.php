@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Mozlv_Cache_Transients_API is one of the Mozlv_Cache_Interface implematations, which stores values using WordPress Transients API.
+ * 
+ * @link https://codex.wordpress.org/Transients_API Transients API « WordPress Codex
+ * @author Michal Stanke <michal.stanke@mikk.cz>
+ */
 class Mozlv_Cache_Transients_API implements Mozlv_Cache_Interface {
 
 	private $created = '_created';

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * SeaMonkey product class.
+ * 
+ * @author Michal Stanke <michal.stanke@mikk.cz>
+ */
 class Mozlv_Product_SeaMonkey extends Mozlv_Product_Class {
 
 	protected $json_URL = 'http://www.seamonkey-project.org/seamonkey_versions.json';

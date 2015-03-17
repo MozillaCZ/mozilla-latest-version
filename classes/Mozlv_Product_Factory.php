@@ -1,9 +1,20 @@
 <?php
 
+/**
+ * Mozlv_Product_Factory is a static class to get the product class according to the shortcode attribute.
+ *
+ * @author Michal Stanke <michal.stanke@mikk.cz>
+ */
 class Mozlv_Product_Factory {
 
 	private static $products = array();
 
+	/**
+	 * Returns the product class according to the shortcode attribute.
+	 * 
+	 * @param string $product shortcode attribute
+	 * @return Mozlv_Product_Class
+	 */
 	public static function get_product($product) {
 		switch($product) {
 			case 'firefox':
