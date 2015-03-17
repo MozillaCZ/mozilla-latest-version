@@ -13,6 +13,7 @@ defined('ABSPATH') or die();
 
 define('MOZLV_PLUGIN_FILE', __FILE__);
 define('MOZLV_PLUGIN_DIR', trailingslashit(plugin_dir_path(MOZLV_PLUGIN_FILE)));
+define('MOZLV_DATA_LOAD_TIMEOUT', 2);
 define('MOZLV_CACHE_FILES_DIR', trailingslashit(WP_CONTENT_DIR).'mozlv-cache/');
 
 spl_autoload_register('mozlv_autoload');

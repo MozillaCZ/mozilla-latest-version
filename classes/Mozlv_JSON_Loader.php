@@ -66,8 +66,13 @@ class Mozlv_JSON_Loader {
 	 * @throw Mozlv_Invalid_Data_Exception if the loaded data are invalid or cannot be parsed
 	 */
 	private function load_directly($URL) {
-		$json = file_get_contents($URL);
-		if(!$this->substring_in_array(' 200 OK', $http_response_header)) {
+		$context = stream_context_create(
+			array(
+				'http' => array('timeout' => MOZLV_DATA_LOAD_TIMEOUT)
+			)
+		);
+		$json = @file_get_contents($URL, false, $context);
+		if($json == false || !$this->substring_in_array(' 200 OK', $http_response_header)) {
 			throw new Mozlv_Data_Load_Exception('Cannot load data.');
 		}
 		if(!$this->is_JSON($json)) {
