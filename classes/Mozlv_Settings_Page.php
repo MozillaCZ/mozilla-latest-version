@@ -1,13 +1,26 @@
 <?php
 
+/**
+ * Mozlv_Settings_Page outputs the plugin settings page HTML code.
+ * 
+ * @author Michal Stanke <michal.stanke@mikk.cz>
+ */
 class Mozlv_Settings_Page {
 
 	private $option_group;
 
+	/**
+	 * Mozlv_Settings_Page constructor.
+	 * 
+	 * @param string $option_group
+	 */
 	public function __construct($option_group) {
 		$this->option_group = $option_group;
 	}
 
+	/**
+	 * Outputs main plugin admin page HTML code.
+	 */
 	public function main() {
 		print('<div class="wrap">');
 
@@ -22,6 +35,9 @@ class Mozlv_Settings_Page {
 		print('</div>');
 	}
 
+	/**
+	 * Outputs main plugin admin page settings HTML code.
+	 */
 	private function main_settings() {
 		$mozlv_options = Mozlv_Options::getInstance();
 		print('<form method="post" action="options.php">');
@@ -76,6 +92,12 @@ class Mozlv_Settings_Page {
 		print('</form>');
 	}
 
+	/**
+	 * Outputs selected for $cache_type set.
+	 * 
+	 * @param string $cache_type
+	 * @return string selected for $cache_type
+	 */
 	private function if_selected_cache_type($cache_type) {
 		if(Mozlv_Options::getInstance()->get_cache_type() == $cache_type) {
 			return ' selected';
@@ -84,6 +106,9 @@ class Mozlv_Settings_Page {
 		}
 	}
 
+	/**
+	 * Outputs main plugin admin page how to HTML code.
+	 */
 	private function main_howto() {
 		print('
 			<p>There are currently four shortcodes added by this plugin. And three more additional for easier migration from the Mozilla.sk CMS Plugin without need of any content change. Here are explained all of them with their attributes.</p>

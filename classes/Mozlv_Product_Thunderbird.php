@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Thunderbird product class.
+ * 
+ * @author Michal Stanke <michal.stanke@mikk.cz>
+ */
 class Mozlv_Product_Thunderbird extends Mozlv_Product_Class {
 
 	protected $json_URL = 'https://www.mozilla.org/includes/product-details/json/thunderbird_versions.json';
