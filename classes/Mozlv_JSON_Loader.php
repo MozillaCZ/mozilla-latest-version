@@ -40,7 +40,7 @@ class Mozlv_JSON_Loader {
 	 */
 	private function load_using_cache($URL) {
 		$in_cache = basename($URL);
-		if($this->cache->get($in_cache)) {
+		if($this->cache->valid($in_cache)) {
 			$json = $this->cache->get($in_cache);
 		} else {
 			try {

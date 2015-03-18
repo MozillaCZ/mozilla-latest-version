@@ -8,6 +8,14 @@
 interface Mozlv_Cache_Interface {
 
 	/**
+	 * Checks the value for $key stored in cache is valid (exists and not expired).
+	 * 
+	 * @param string $key
+	 * @return boolean true if exists and not expired
+	 */
+	public function valid($key);
+
+	/**
 	 * Returns the value stored in cache for $key.
 	 * 
 	 * @param string $key
