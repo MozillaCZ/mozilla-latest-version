@@ -126,7 +126,7 @@ class Mozlv_Shortcode {
 	 * @return Mozlv_Product_Class
 	 */
 	private function get_product_class_for_shortcode($atts) {
-		shortcode_atts(
+		$atts = shortcode_atts(
 			array('product' => NULL,
 				  'platform' => NULL,
 				  'channel' => NULL,
@@ -143,7 +143,7 @@ class Mozlv_Shortcode {
 	 * @return array $atts shortcode attributes
 	 */
 	private function mozsk_atts($atts) {
-		shortcode_atts(
+		$atts = shortcode_atts(
 			array('app' => NULL,
 				  'platform' => NULL,
 				  'channel' => NULL,
