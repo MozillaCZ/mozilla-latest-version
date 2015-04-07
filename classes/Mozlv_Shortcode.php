@@ -16,7 +16,8 @@ class Mozlv_Shortcode {
 	 * @return string product version
 	 */
 	public function get_latest_version($atts) {
-		$product_class = self::getInstance()->get_product_class_for_shortcode($atts);
+		$atts = self::mozlv_atts($atts);
+		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
 		if($product_class == NULL) {
 			return;
 		}
@@ -30,7 +31,8 @@ class Mozlv_Shortcode {
 	 * @return string product download URL
 	 */
 	public function get_latest_download_URL($atts) {
-		$product_class = self::getInstance()->get_product_class_for_shortcode($atts);
+		$atts = self::mozlv_atts($atts);
+		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
 		if($product_class == NULL) {
 			return;
 		}
@@ -44,7 +46,8 @@ class Mozlv_Shortcode {
 	 * @return string product language pack download URL
 	 */
 	public function get_latest_langpack_URL($atts) {
-		$product_class = self::getInstance()->get_product_class_for_shortcode($atts);
+		$atts = self::mozlv_atts($atts);
+		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
 		if($product_class == NULL) {
 			return;
 		}
@@ -58,7 +61,8 @@ class Mozlv_Shortcode {
 	 * @return string product changelog URL
 	 */
 	public function get_latest_changelog_URL($atts) {
-		$product_class = self::getInstance()->get_product_class_for_shortcode($atts);
+		$atts = self::mozlv_atts($atts);
+		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
 		if($product_class == NULL) {
 			return;
 		}
@@ -72,7 +76,8 @@ class Mozlv_Shortcode {
 	 * @return string product system requirements URL
 	 */
 	public function get_latest_requirements_URL($atts) {
-		$product_class = self::getInstance()->get_product_class_for_shortcode($atts);
+		$atts = self::mozlv_atts($atts);
+		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
 		if($product_class == NULL) {
 			return;
 		}
@@ -120,20 +125,20 @@ class Mozlv_Shortcode {
 	}
 
 	/**
-	 * Get product class for shortcode attributes.
+	 * Fix shortcode attributes.
 	 * 
 	 * @param array $atts shortcode attributes
-	 * @return Mozlv_Product_Class
+	 * @return array $atts shortcode attributes
 	 */
-	private function get_product_class_for_shortcode($atts) {
-		shortcode_atts(
+	private function mozlv_atts($atts) {
+		$atts = shortcode_atts(
 			array('product' => NULL,
 				  'platform' => NULL,
 				  'channel' => NULL,
 			),
 			$atts
 		);
-		return Mozlv_Product_Factory::get_product($atts['product']);
+		return $atts;
 	}
 
 	/**
@@ -143,7 +148,7 @@ class Mozlv_Shortcode {
 	 * @return array $atts shortcode attributes
 	 */
 	private function mozsk_atts($atts) {
-		shortcode_atts(
+		$atts = shortcode_atts(
 			array('app' => NULL,
 				  'platform' => NULL,
 				  'channel' => NULL,
