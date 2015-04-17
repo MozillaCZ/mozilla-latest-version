@@ -17,10 +17,13 @@ There are currently four shortcodes added by this plugin. And three more additio
 * `[mozilla-latest-changelog-url product="product"]` - changelog page URL for the latest version of the specified _product_
 * `[mozilla-latest-requirements-url product="product"]` - requirements page URL for the latest version of the specified _product_
 
-#### Shortcodes for easier migration from the Mozilla.sk CMS Plugin
+#### Shortcodes for easier migration from the [Mozilla.sk CMS Plugin](https://github.com/MozillaCZ/mozsk-cms).
 * `[moz-download-version app="product"]` = `[mozilla-latest-version product="product"]`
 * `[moz-download-url app="product" platform="platform"]` = `[mozilla-latest-download-url product="product" platform="platform"]`
 * `[moz-download-rn app="product"]` = `[mozilla-latest-changelog-url product="product"]`
+
+#### Including directly into the WordPress template
+Simply use [do_shortcode()](https://codex.wordpress.org/Function_Reference/do_shortcode) function.
 
 ### Attributes
 * `product` possible values are `firefox` for desktop, `fennec` or `mobile` for Android, `thunderbird` and `seamonkey`
