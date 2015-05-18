@@ -20,9 +20,9 @@ class Mozlv_Options {
 	 */
 	public function install() {
 		$mozlv_options = self::getInstance();
-		add_option($mozlv_options->cache_type, $mozlv_options->cache_type_transients_api);
-		add_option($mozlv_options->cache_expire, 3600);
-		add_option($mozlv_options->links_lang, 'en-US');
+		add_option( $mozlv_options->cache_type, $mozlv_options->cache_type_transients_api );
+		add_option( $mozlv_options->cache_expire, 3600 );
+		add_option( $mozlv_options->links_lang, 'en-US' );
 	}
 
 	/**
@@ -30,9 +30,9 @@ class Mozlv_Options {
 	 */
 	public function register_settings() {
 		$mozlv_options = self::getInstance();
-		register_setting($mozlv_options->option_group, $mozlv_options->cache_type);
-		register_setting($mozlv_options->option_group, $mozlv_options->cache_expire);
-		register_setting($mozlv_options->option_group, $mozlv_options->links_lang);
+		register_setting( $mozlv_options->option_group, $mozlv_options->cache_type );
+		register_setting( $mozlv_options->option_group, $mozlv_options->cache_expire );
+		register_setting( $mozlv_options->option_group, $mozlv_options->links_lang );
 	}
 
 	/**
@@ -44,7 +44,7 @@ class Mozlv_Options {
 			'MOZLV Settings',
 			'manage_options',
 			'Mozlv_Settings_Page.php',
-			array(new Mozlv_Settings_Page(self::getInstance()->option_group), 'main')
+			array( new Mozlv_Settings_Page( self::getInstance()->option_group ), 'main' )
 		);
 	}
 
@@ -59,7 +59,7 @@ class Mozlv_Options {
 	 * Returns cache type setting value.
 	 */
 	public function get_cache_type() {
-		return get_option($this->cache_type());
+		return get_option( $this->cache_type() );
 	}
 
 	/**
@@ -87,7 +87,7 @@ class Mozlv_Options {
 	 * Returns cache expiration value.
 	 */
 	public function get_cache_expire() {
-		return get_option($this->cache_expire());
+		return get_option( $this->cache_expire() );
 	}
 
 	/**
@@ -101,14 +101,14 @@ class Mozlv_Options {
 	 * Returns links language setting value.
 	 */
 	public function get_links_lang() {
-		return get_option($this->links_lang());
+		return get_option( $this->links_lang() );
 	}
 
 	/**
 	 * Returns the Mozlv_Options singleton instance.
 	 */
 	public static function getInstance() {
-		if(self::$instance == NULL) {
+		if ( self::$instance == NULL ) {
 			self::$instance = new self();
 		}
 		return self::$instance;
