@@ -9,14 +9,14 @@ Author URI:		http://www.mozilla.cz/
 License:		GPL2
 */
 
-defined('ABSPATH') or die();
+defined( 'ABSPATH' ) or die();
 
-define('MOZLV_PLUGIN_FILE', __FILE__);
-define('MOZLV_PLUGIN_DIR', trailingslashit(plugin_dir_path(MOZLV_PLUGIN_FILE)));
-define('MOZLV_DATA_LOAD_TIMEOUT', 2);
-define('MOZLV_CACHE_FILES_DIR', trailingslashit(WP_CONTENT_DIR).'mozlv-cache/');
+define( 'MOZLV_PLUGIN_FILE', __FILE__ );
+define( 'MOZLV_PLUGIN_DIR', trailingslashit( plugin_dir_path( MOZLV_PLUGIN_FILE ) ) );
+define( 'MOZLV_DATA_LOAD_TIMEOUT', 2 );
+define( 'MOZLV_CACHE_FILES_DIR', trailingslashit(WP_CONTENT_DIR).'mozlv-cache/' );
 
-spl_autoload_register('mozlv_autoload');
+spl_autoload_register( 'mozlv_autoload' );
 
 /**
  * Handles plugin classes autoloading (all should be prefixed by 'Mozlv_').
@@ -24,10 +24,10 @@ spl_autoload_register('mozlv_autoload');
  * @param string $class_name
  * @return true if the class has been loaded successfully
  */
-function mozlv_autoload($class_name) {
-	if(substr($class_name, 0, strlen('Mozlv_')) === 'Mozlv_') {
-		$class_path = MOZLV_PLUGIN_DIR . 'classes/' . str_replace("\\", '/', $class_name)  . '.php';
-		if(file_exists($class_path)) {
+function mozlv_autoload( $class_name ) {
+	if ( substr( $class_name, 0, strlen('Mozlv_') ) === 'Mozlv_' ) {
+		$class_path = MOZLV_PLUGIN_DIR . 'classes/' . str_replace( "\\", '/', $class_name ) . '.php';
+		if ( file_exists( $class_path ) ) {
 			require $class_path;
 			return true;
 		}
@@ -36,20 +36,20 @@ function mozlv_autoload($class_name) {
 }
 
 // Plugin installation and admin options
-register_activation_hook(MOZLV_PLUGIN_FILE, array('Mozlv_Options', 'install'));
-if (is_admin()){
-	add_action('admin_init', array('Mozlv_Options', 'register_settings'));
-	add_action('admin_menu', array('Mozlv_Options', 'add_menu'));
+register_activation_hook( MOZLV_PLUGIN_FILE, array('Mozlv_Options', 'install') );
+if ( is_admin() ){
+	add_action( 'admin_init', array('Mozlv_Options', 'register_settings') );
+	add_action( 'admin_menu', array('Mozlv_Options', 'add_menu') );
 }
 
 // Mozilla Latest Version shortcodes
-add_shortcode('mozilla-latest-version', array('Mozlv_Shortcode', 'get_latest_version'));
-add_shortcode('mozilla-latest-download-url', array('Mozlv_Shortcode', 'get_latest_download_URL'));
-add_shortcode('mozilla-latest-langpack-url', array('Mozlv_Shortcode', 'get_latest_langpack_URL'));
-add_shortcode('mozilla-latest-changelog-url', array('Mozlv_Shortcode', 'get_latest_changelog_URL'));
-add_shortcode('mozilla-latest-requirements-url', array('Mozlv_Shortcode', 'get_latest_requirements_URL'));
+add_shortcode( 'mozilla-latest-version', array('Mozlv_Shortcode', 'get_latest_version') );
+add_shortcode( 'mozilla-latest-download-url', array('Mozlv_Shortcode', 'get_latest_download_URL') );
+add_shortcode( 'mozilla-latest-langpack-url', array('Mozlv_Shortcode', 'get_latest_langpack_URL') );
+add_shortcode( 'mozilla-latest-changelog-url', array('Mozlv_Shortcode', 'get_latest_changelog_URL') );
+add_shortcode( 'mozilla-latest-requirements-url', array('Mozlv_Shortcode', 'get_latest_requirements_URL') );
 
 // Shortcodes for Mozilla.sk CMS Plugin compatibility
-add_shortcode('moz-download-version', array('Mozlv_Shortcode', 'moz_download_version_handler'));
-add_shortcode('moz-download-url', array('Mozlv_Shortcode', 'moz_download_url_handler'));
-add_shortcode('moz-download-rn', array('Mozlv_Shortcode', 'moz_download_rn_handler'));
+add_shortcode( 'moz-download-version', array('Mozlv_Shortcode', 'moz_download_version_handler') );
+add_shortcode( 'moz-download-url', array('Mozlv_Shortcode', 'moz_download_url_handler') );
+add_shortcode( 'moz-download-rn', array('Mozlv_Shortcode', 'moz_download_rn_handler') );

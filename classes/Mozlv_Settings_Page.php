@@ -14,7 +14,7 @@ class Mozlv_Settings_Page {
 	 * 
 	 * @param string $option_group
 	 */
-	public function __construct($option_group) {
+	public function __construct( $option_group ) {
 		$this->option_group = $option_group;
 	}
 
@@ -22,17 +22,17 @@ class Mozlv_Settings_Page {
 	 * Outputs main plugin admin page HTML code.
 	 */
 	public function main() {
-		print('<div class="wrap">');
+		print( '<div class="wrap">' );
 
-		$plugin_data = get_plugin_data(MOZLV_PLUGIN_FILE);
-		printf('<h2>%s</h2>', $plugin_data['Name']);
-		printf('<p>%s</p>', $plugin_data['Description']);
-		print('<h2>Settings</h2>');
+		$plugin_data = get_plugin_data( MOZLV_PLUGIN_FILE );
+		printf( '<h2>%s</h2>', $plugin_data['Name'] );
+		printf( '<p>%s</p>', $plugin_data['Description'] );
+		print( '<h2>Settings</h2>' );
 		$this->main_settings();
-		print('<h2>How to use it?</h2>');
+		print( '<h2>How to use it?</h2>' );
 		$this->main_howto();
 
-		print('</div>');
+		print( '</div>' );
 	}
 
 	/**
@@ -40,10 +40,10 @@ class Mozlv_Settings_Page {
 	 */
 	private function main_settings() {
 		$mozlv_options = Mozlv_Options::getInstance();
-		print('<form method="post" action="options.php">');
-		settings_fields($this->option_group);
-		do_settings_sections($this->option_group);
-		print('<table class="form-table">');
+		print( '<form method="post" action="options.php">' );
+		settings_fields( $this->option_group );
+		do_settings_sections( $this->option_group );
+		print( '<table class="form-table">' );
 		printf('
 			<tr>
 				<th><label for="%1$s">Cache type</label></th>
@@ -59,9 +59,9 @@ class Mozlv_Settings_Page {
 			',
 			$mozlv_options->cache_type(),
 			$mozlv_options->cache_type_transients_api(),
-			$this->if_selected_cache_type($mozlv_options->cache_type_transients_api()),
+			$this->if_selected_cache_type( $mozlv_options->cache_type_transients_api() ),
 			$mozlv_options->cache_type_files(),
-			$this->if_selected_cache_type($mozlv_options->cache_type_files())
+			$this->if_selected_cache_type( $mozlv_options->cache_type_files() )
 		);
 		printf('
 			<tr>
@@ -73,7 +73,7 @@ class Mozlv_Settings_Page {
 			</tr>
 			',
 			$mozlv_options->cache_expire(),
-			esc_attr($mozlv_options->get_cache_expire())
+			esc_attr( $mozlv_options->get_cache_expire() )
 		);
 		printf('
 			<tr>
@@ -85,11 +85,11 @@ class Mozlv_Settings_Page {
 			</tr>
 			',
 			$mozlv_options->links_lang(),
-			esc_attr($mozlv_options->get_links_lang())
+			esc_attr( $mozlv_options->get_links_lang() )
 		);
-		print('</table>');
+		print( '</table>' );
 		submit_button();
-		print('</form>');
+		print( '</form>' );
 	}
 
 	/**
@@ -98,8 +98,8 @@ class Mozlv_Settings_Page {
 	 * @param string $cache_type
 	 * @return string selected for $cache_type
 	 */
-	private function if_selected_cache_type($cache_type) {
-		if(Mozlv_Options::getInstance()->get_cache_type() == $cache_type) {
+	private function if_selected_cache_type( $cache_type ) {
+		if ( Mozlv_Options::getInstance()->get_cache_type() == $cache_type ) {
 			return ' selected';
 		} else {
 			return '';

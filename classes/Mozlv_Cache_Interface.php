@@ -13,7 +13,7 @@ interface Mozlv_Cache_Interface {
 	 * @param string $key
 	 * @return boolean true if exists and not expired
 	 */
-	public function valid($key);
+	public function valid( $key );
 
 	/**
 	 * Returns the value stored in cache for $key.
@@ -21,7 +21,7 @@ interface Mozlv_Cache_Interface {
 	 * @param string $key
 	 * @return string value stored in cache or boolean false if no value stored or expired
 	 */
-	public function get($key);
+	public function get( $key );
 
 	/**
 	 * Stores $value for $key in the cache.
@@ -30,7 +30,7 @@ interface Mozlv_Cache_Interface {
 	 * @param string $value
 	 * @return boolean true if stored successfully
 	 */
-	public function store($key, $value);
+	public function store( $key, $value );
 
 	/**
 	 * Removes value stored for $key from the cache.
@@ -38,6 +38,6 @@ interface Mozlv_Cache_Interface {
 	 * @param string $key
 	 * @return boolean true if removed successfully
 	 */
-	public function remove($key);
+	public function remove( $key );
 
 }

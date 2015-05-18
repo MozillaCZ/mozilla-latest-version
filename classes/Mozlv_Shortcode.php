@@ -15,13 +15,13 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return string product version
 	 */
-	public function get_latest_version($atts) {
-		$atts = self::mozlv_atts($atts);
-		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
-		if($product_class == NULL) {
+	public function get_latest_version( $atts ) {
+		$atts = self::mozlv_atts( $atts );
+		$product_class = Mozlv_Product_Factory::get_product( $atts['product'] );
+		if ( $product_class == NULL ) {
 			return;
 		}
-		return htmlspecialchars($product_class->get_latest_version($atts['channel'], $atts['platform']));
+		return htmlspecialchars( $product_class->get_latest_version( $atts['channel'], $atts['platform'] ) );
 	}
 
 	/**
@@ -30,13 +30,13 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return string product download URL
 	 */
-	public function get_latest_download_URL($atts) {
-		$atts = self::mozlv_atts($atts);
-		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
-		if($product_class == NULL) {
+	public function get_latest_download_URL( $atts ) {
+		$atts = self::mozlv_atts( $atts );
+		$product_class = Mozlv_Product_Factory::get_product( $atts['product'] );
+		if ( $product_class == NULL ) {
 			return;
 		}
-		return htmlspecialchars($product_class->get_latest_download_URL($atts['channel'], $atts['platform']));
+		return htmlspecialchars( $product_class->get_latest_download_URL( $atts['channel'], $atts['platform'] ) );
 	}
 
 	/**
@@ -45,13 +45,13 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return string product language pack download URL
 	 */
-	public function get_latest_langpack_URL($atts) {
-		$atts = self::mozlv_atts($atts);
-		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
-		if($product_class == NULL) {
+	public function get_latest_langpack_URL( $atts ) {
+		$atts = self::mozlv_atts( $atts );
+		$product_class = Mozlv_Product_Factory::get_product( $atts['product'] );
+		if ( $product_class == NULL ) {
 			return;
 		}
-		return htmlspecialchars($product_class->get_latest_langpack_URL($atts['channel'], $atts['platform']));		
+		return htmlspecialchars( $product_class->get_latest_langpack_URL( $atts['channel'], $atts['platform'] ) );
 	}
 
 	/**
@@ -60,13 +60,13 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return string product changelog URL
 	 */
-	public function get_latest_changelog_URL($atts) {
-		$atts = self::mozlv_atts($atts);
-		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
-		if($product_class == NULL) {
+	public function get_latest_changelog_URL( $atts ) {
+		$atts = self::mozlv_atts( $atts );
+		$product_class = Mozlv_Product_Factory::get_product( $atts['product'] );
+		if ( $product_class == NULL ) {
 			return;
 		}
-		return htmlspecialchars($product_class->get_latest_changelog_URL($atts['channel'], $atts['platform']));
+		return htmlspecialchars( $product_class->get_latest_changelog_URL( $atts['channel'], $atts['platform'] ) );
 	}
 
 	/**
@@ -75,13 +75,13 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return string product system requirements URL
 	 */
-	public function get_latest_requirements_URL($atts) {
-		$atts = self::mozlv_atts($atts);
-		$product_class = Mozlv_Product_Factory::get_product($atts['product']);
-		if($product_class == NULL) {
+	public function get_latest_requirements_URL( $atts ) {
+		$atts = self::mozlv_atts( $atts );
+		$product_class = Mozlv_Product_Factory::get_product( $atts['product'] );
+		if ( $product_class == NULL ) {
 			return;
 		}
-		return htmlspecialchars($product_class->get_latest_requirements_URL($atts['channel'], $atts['platform']));
+		return htmlspecialchars( $product_class->get_latest_requirements_URL( $atts['channel'], $atts['platform'] ) );
 	}
 
 	/**
@@ -90,9 +90,9 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return string product version
 	 */
-	public function moz_download_version_handler($atts) {
-		$atts = self::mozsk_atts($atts);
-		return self::get_latest_version($atts);
+	public function moz_download_version_handler( $atts ) {
+		$atts = self::mozsk_atts( $atts );
+		return self::get_latest_version( $atts );
 	}
 
 	/**
@@ -101,15 +101,15 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return string product download URL
 	 */
-	public function moz_download_url_handler($atts) {
-		$atts = self::mozsk_atts($atts);
-		if ($atts == NULL) {
+	public function moz_download_url_handler( $atts ) {
+		$atts = self::mozsk_atts( $atts );
+		if ( $atts == NULL ) {
 			return;
 		}
-		if($atts['platform'] == 'port') {
-			return self::get_latest_langpack_URL($atts);
+		if ( $atts['platform'] == 'port' ) {
+			return self::get_latest_langpack_URL( $atts );
 		} else {
-			return self::get_latest_download_URL($atts);
+			return self::get_latest_download_URL( $atts );
 		}
 	}
 
@@ -119,9 +119,9 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return string product changelog URL
 	 */
-	public function moz_download_rn_handler($atts) {
-		$atts = self::mozsk_atts($atts);
-		return self::get_latest_changelog_URL($atts);
+	public function moz_download_rn_handler( $atts ) {
+		$atts = self::mozsk_atts( $atts );
+		return self::get_latest_changelog_URL( $atts );
 	}
 
 	/**
@@ -130,11 +130,12 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return array $atts shortcode attributes
 	 */
-	private function mozlv_atts($atts) {
+	private function mozlv_atts( $atts ) {
 		$atts = shortcode_atts(
-			array('product' => NULL,
-				  'platform' => NULL,
-				  'channel' => NULL,
+			array(
+				'product'  => NULL,
+				'platform' => NULL,
+				'channel'  => NULL,
 			),
 			$atts
 		);
@@ -147,11 +148,12 @@ class Mozlv_Shortcode {
 	 * @param array $atts shortcode attributes
 	 * @return array $atts shortcode attributes
 	 */
-	private function mozsk_atts($atts) {
+	private function mozsk_atts( $atts ) {
 		$atts = shortcode_atts(
-			array('app' => NULL,
-				  'platform' => NULL,
-				  'channel' => NULL,
+			array(
+				'app'      => NULL,
+				'platform' => NULL,
+				'channel'  => NULL,
 			),
 			$atts
 		);
@@ -163,7 +165,7 @@ class Mozlv_Shortcode {
 	 * Returns the Mozlv_Shortcode singleton instance.
 	 */
 	private static function getInstance() {
-		if(self::$instance == NULL) {
+		if ( self::$instance == NULL ) {
 			self::$instance = new self();
 		}
 		return self::$instance;
