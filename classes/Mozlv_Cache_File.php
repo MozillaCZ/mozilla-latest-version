@@ -23,6 +23,9 @@ class Mozlv_Cache_File implements Mozlv_Cache_Interface {
 
 	public function store( $key, $value ) {
 		wp_mkdir_p( $this->cache_dir );
+		if ( ! file_exists( $this->cache_dir.".htaccess" ) ) {
+			file_put_contents( $this->cache_dir.".htaccess", "deny from all", LOCK_EX );
+		}
 		return file_put_contents( $this->cache_dir.$key, $value, LOCK_EX );
 	}
 
