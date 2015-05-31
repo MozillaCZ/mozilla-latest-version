@@ -19,7 +19,8 @@ class Mozlv_Cache_Transients_API implements Mozlv_Cache_Interface {
 	}
 
 	public function store( $key, $value ) {
-		return set_transient( $this->get_transient_name( $key ), $value ) && set_transient( $this->get_transient_name( $key ).$this->created, time() );
+		set_transient( $this->get_transient_name( $key ), $value );
+		return set_transient( $this->get_transient_name( $key ).$this->created, time() );
 	}
 
 	public function remove( $key ) {
