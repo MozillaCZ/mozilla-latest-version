@@ -15,15 +15,16 @@ class Mozlv_Cache_Transients_API implements Mozlv_Cache_Interface {
 	}
 
 	public function get( $key ) {
-		return get_transient( $key );
+		return get_transient( $this->get_transient_name( $key ) );
 	}
 
 	public function store( $key, $value ) {
-		return set_transient( $key, $value ) && set_transient( $key.$this->created, time() );
+		set_transient( $this->get_transient_name( $key ), $value );
+		return set_transient( $this->get_transient_name( $key ).$this->created, time() );
 	}
 
 	public function remove( $key ) {
-		return delete_transient( $key ) && delete_transient( $key.$this->created );
+		return delete_transient( $this->get_transient_name( $key ) ) && delete_transient( $this->get_transient_name( $key ).$this->created );
 	}
 
 	/**
@@ -33,7 +34,7 @@ class Mozlv_Cache_Transients_API implements Mozlv_Cache_Interface {
 	 * @return boolean true if exists
 	 */
 	private function exists( $key ) {
-		return (bool)( get_transient( $key ) );
+		return (bool)( get_transient( $this->get_transient_name( $key ) ) );
 	}
 
 	/**
@@ -43,8 +44,18 @@ class Mozlv_Cache_Transients_API implements Mozlv_Cache_Interface {
 	 * @return boolean true if expired
 	 */
 	private function expired( $key ) {
-		$created = get_transient( $key.$this->created );
+		$created = get_transient( $this->get_transient_name( $key ).$this->created );
 		return $created && time() - $created > Mozlv_Options::getInstance()->get_cache_expire();
+	}
+
+	/**
+	 * Get transient name for the key.
+	 * 
+	 * @param string $key
+	 * @return string transient name
+	 */
+	private function get_transient_name( $key ) {
+		return sha1($key);
 	}
 
 }

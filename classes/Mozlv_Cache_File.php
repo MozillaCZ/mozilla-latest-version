@@ -15,7 +15,7 @@ class Mozlv_Cache_File implements Mozlv_Cache_Interface {
 
 	public function get( $key ) {
 		if ( $this->exists( $key ) ) {
-			return file_get_contents( $this->cache_dir.$key );
+			return file_get_contents( $this->get_file_path( $key ) );
 		} else {
 			return false;
 		}
@@ -26,15 +26,15 @@ class Mozlv_Cache_File implements Mozlv_Cache_Interface {
 		if ( ! file_exists( $this->cache_dir.".htaccess" ) ) {
 			file_put_contents( $this->cache_dir.".htaccess", "deny from all", LOCK_EX );
 		}
-		return file_put_contents( $this->cache_dir.$key, $value, LOCK_EX );
+		return file_put_contents( $this->get_file_path( $key ), $value, LOCK_EX );
 	}
 
 	public function remove( $key ) {
 		if ( $this->exists( $key ) ) {
-			return unlink( $this->cache_dir.$key );
-		} else {
-			return true;
+			unlink( $this->get_file_path( $key ) );
+			clearstatcache( true, $this->get_file_path( $key ) );
 		}
+		return true;
 	}
 
 	/**
@@ -44,7 +44,7 @@ class Mozlv_Cache_File implements Mozlv_Cache_Interface {
 	 * @return boolean true if exists
 	 */
 	private function exists( $key ) {
-		return is_file( $this->cache_dir.$key );
+		return is_file( $this->get_file_path( $key ) );
 	}
 
 	/**
@@ -54,7 +54,17 @@ class Mozlv_Cache_File implements Mozlv_Cache_Interface {
 	 * @return boolean true if expired
 	 */
 	private function expired( $key ) {
-		return time() - filemtime( $this->cache_dir.$key ) > Mozlv_Options::getInstance()->get_cache_expire();
+		return time() - filemtime( $this->get_file_path( $key ) ) > Mozlv_Options::getInstance()->get_cache_expire();
+	}
+
+	/**
+	 * Get file name (including path) for the key.
+	 * 
+	 * @param string $key
+	 * @return string file path
+	 */
+	private function get_file_path( $key ) {
+		return $this->cache_dir . sha1($key) . '.cache';
 	}
 
 }
