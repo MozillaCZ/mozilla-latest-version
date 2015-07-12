@@ -120,10 +120,20 @@ abstract class Mozlv_Product_Class {
 		}
 		switch ( $platform ) {
 			case 'win':
+				$platform = 'win';
 				break;
+			case 'win64':
+				$platform = 'win64';
+				break;
+			case 'linux':
 			case 'lin':
 				$platform = 'linux';
 				break;
+			case 'linux64':
+			case 'lin64':
+				$platform = 'linux64';
+				break;
+			case 'osx':
 			case 'mac':
 				$platform = 'osx';
 				break;

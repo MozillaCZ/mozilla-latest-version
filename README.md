@@ -27,7 +27,7 @@ Simply use [do_shortcode()](https://codex.wordpress.org/Function_Reference/do_sh
 
 ### Attributes
 * `product` possible values are `firefox` for desktop, `fennec` or `mobile` for Android, `thunderbird` and `seamonkey`
-* `platform` specifies the platform for download links. Possible values are `win`, `lin` and `mac`
+* `platform` specifies the platform for download links. Possible values are `win`, `win64`, `linux`, `lin`, `linux64`, `lin64`, `osx` and `mac`
 * `channel` specifies the channel of product are is product dependent (if no specified, `release` will be used)
 
 ### Channel
