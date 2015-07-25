@@ -116,12 +116,16 @@ class Mozlv_Settings_Page {
 			<p class="description">All URLs (where posible) will contain the language code specified above.</p>
 			<ul>
 				<li><code>[mozilla-latest-version product=<em>product</em>]</code> - the latest version number of the specified <em>product</em></li>
+			</ul>
+			<p class="description">These URL shortcodes below work also as <a href="https://codex.wordpress.org/Shortcode_API#Enclosing_vs_self-closing_shortcodes" target="_blank">enclosing</a>. Using <code>[shortcode]...[/shortcode]</code> will produce HTML link <code>&lt;a href="URL"&gt;...&lt;/a&gt;</code> instead of an URL string.</p>
+			<ul>
 				<li><code>[mozilla-latest-download-url product=<em>product</em> platform=<em>platform</em>]</code> - download URL of the latest version of the specified <em>product</em> for <em>platform</em></li>
 				<li><code>[mozilla-latest-langpack-url product=<em>product</em> platform=<em>platform</em>]</code> - download URL of the latest langpack (.xpi) for the specified <em>product</em> and <em>platform</em> (not available for <code>fennec</code>)</li>
 				<li><code>[mozilla-latest-changelog-url product=<em>product</em>]</code> - changelog page URL for the latest version of the specified <em>product</em></li>
 				<li><code>[mozilla-latest-requirements-url product=<em>product</em>]</code> - requirements page URL for the latest version of the specified <em>product</em></li>
 			</ul>
 			<h4>Shortcodes for easier migration from the Mozilla.sk CMS Plugin</h4>
+			<p class="description">The Mozilla.sk CMS plugin shortcodes work as <a href="https://codex.wordpress.org/Shortcode_API#Enclosing_vs_self-closing_shortcodes" target="_blank">self-closing</a> only.</p>
 			<ul>
 				<li><code>[moz-download-version app=<em>product</em>]</code> = <code>[mozilla-latest-version product=<em>product</em>]</code></li>
 				<li><code>[moz-download-url app=<em>product</em> platform=<em>platform</em>]</code> = <code>[mozilla-latest-download-url product=<em>product</em> platform=<em>platform</em>]</code></li>
