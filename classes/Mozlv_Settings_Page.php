@@ -115,17 +115,17 @@ class Mozlv_Settings_Page {
 			<h3 class="title">Shortcodes</h3>
 			<p class="description">All URLs (where posible) will contain the language code specified above.</p>
 			<ul>
-				<li><code>[mozilla-latest-version product="<em>product</em>"]</code> - the latest version number of the specified <em>product</em></li>
-				<li><code>[mozilla-latest-download-url product="<em>product</em>" platform="<em>platform</em>"]</code> - download URL of the latest version of the specified <em>product</em> for <em>platform</em></li>
-				<li><code>[mozilla-latest-langpack-url product="<em>product</em>" platform="<em>platform</em>"]</code> - download URL of the latest langpack (.xpi) for the specified <em>product</em> and <em>platform</em> (not available for <code>fennec</code>)</li>
-				<li><code>[mozilla-latest-changelog-url product="<em>product</em>"]</code> - changelog page URL for the latest version of the specified <em>product</em></li>
-				<li><code>[mozilla-latest-requirements-url product="<em>product</em>"]</code> - requirements page URL for the latest version of the specified <em>product</em></li>
+				<li><code>[mozilla-latest-version product=<em>product</em>]</code> - the latest version number of the specified <em>product</em></li>
+				<li><code>[mozilla-latest-download-url product=<em>product</em> platform=<em>platform</em>]</code> - download URL of the latest version of the specified <em>product</em> for <em>platform</em></li>
+				<li><code>[mozilla-latest-langpack-url product=<em>product</em> platform=<em>platform</em>]</code> - download URL of the latest langpack (.xpi) for the specified <em>product</em> and <em>platform</em> (not available for <code>fennec</code>)</li>
+				<li><code>[mozilla-latest-changelog-url product=<em>product</em>]</code> - changelog page URL for the latest version of the specified <em>product</em></li>
+				<li><code>[mozilla-latest-requirements-url product=<em>product</em>]</code> - requirements page URL for the latest version of the specified <em>product</em></li>
 			</ul>
 			<h4>Shortcodes for easier migration from the Mozilla.sk CMS Plugin</h4>
 			<ul>
-				<li><code>[moz-download-version app="<em>product</em>"]</code> = <code>[mozilla-latest-version product="<em>product</em>"]</code></li>
-				<li><code>[moz-download-url app="<em>product</em>" platform="<em>platform</em>"]</code> = <code>[mozilla-latest-download-url product="<em>product</em>" platform="<em>platform</em>"]</code></li>
-				<li><code>[moz-download-rn app="<em>product</em>"]</code> = <code>[mozilla-latest-changelog-url product="<em>product</em>"]</code></li>
+				<li><code>[moz-download-version app=<em>product</em>]</code> = <code>[mozilla-latest-version product=<em>product</em>]</code></li>
+				<li><code>[moz-download-url app=<em>product</em> platform=<em>platform</em>]</code> = <code>[mozilla-latest-download-url product=<em>product</em> platform=<em>platform</em>]</code></li>
+				<li><code>[moz-download-rn app=<em>product</em>]</code> = <code>[mozilla-latest-changelog-url product=<em>product</em>]</code></li>
 			</ul>
 			<h3 class="title">Attributes</h3>
 			<ul>
