@@ -11,16 +11,16 @@ The plugin settings you can find in _WordPress Admin -> Options -> MOZLV Setting
 There are currently four shortcodes added by this plugin. And three more additional for easier migration from the Mozilla.sk CMS Plugin without need of any content change. Here are explained all of them with their attributes.
 
 ### Shortcodes
-* `[mozilla-latest-version product="product"]` - the latest version number of the specified _product_
-* `[mozilla-latest-download-url product="product" platform="platform"]` - download URL of the latest version of the specified _product_ for _platform_
-* `[mozilla-latest-langpack-url product="product" platform="platform"]` - download URL of the latest langpack (.xpi) for the specified _product_ and _platform_ (not available for `fennec`)
-* `[mozilla-latest-changelog-url product="product"]` - changelog page URL for the latest version of the specified _product_
-* `[mozilla-latest-requirements-url product="product"]` - requirements page URL for the latest version of the specified _product_
+* `[mozilla-latest-version product=product]` - the latest version number of the specified _product_
+* `[mozilla-latest-download-url product=product platform=platform]` - download URL of the latest version of the specified _product_ for _platform_
+* `[mozilla-latest-langpack-url product=product platform=platform]` - download URL of the latest langpack (.xpi) for the specified _product_ and _platform_ (not available for `fennec`)
+* `[mozilla-latest-changelog-url product=product]` - changelog page URL for the latest version of the specified _product_
+* `[mozilla-latest-requirements-url product=product]` - requirements page URL for the latest version of the specified _product_
 
 #### Shortcodes for easier migration from the [Mozilla.sk CMS Plugin](https://github.com/MozillaCZ/mozsk-cms).
-* `[moz-download-version app="product"]` = `[mozilla-latest-version product="product"]`
-* `[moz-download-url app="product" platform="platform"]` = `[mozilla-latest-download-url product="product" platform="platform"]`
-* `[moz-download-rn app="product"]` = `[mozilla-latest-changelog-url product="product"]`
+* `[moz-download-version app=product]` = `[mozilla-latest-version product=product]`
+* `[moz-download-url app=product platform=platform]` = `[mozilla-latest-download-url product=product platform=platform]`
+* `[moz-download-rn app=product]` = `[mozilla-latest-changelog-url product=product]`
 
 #### Including directly into the WordPress template
 Simply use [do_shortcode()](https://codex.wordpress.org/Function_Reference/do_shortcode) function.
