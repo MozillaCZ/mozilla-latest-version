@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Mozlv_Loader_JSON handles loading and validating JSON from remote server (or cache).
+ * Mozlv_Loader_Interface
  * 
  * @author Michal Stanke <michal.stanke@mikk.cz>
  */
