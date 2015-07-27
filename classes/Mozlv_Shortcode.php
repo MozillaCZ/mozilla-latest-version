@@ -21,7 +21,7 @@ class Mozlv_Shortcode {
 		if ( $product_class == NULL ) {
 			return;
 		}
-		return htmlspecialchars( $product_class->get_latest_version( $atts['channel'], $atts['platform'] ) );
+		return htmlspecialchars( $product_class->get_latest_version( $atts['channel'] ) );
 	}
 
 	/**
