@@ -19,8 +19,8 @@ class Mozlv_Product_Thunderbird extends Mozlv_Product_Class {
 	protected $changelog_URL = 'https://www.mozilla.org/%2$s/thunderbird/%1$s/releasenotes/';
 	protected $requirements_URL = 'https://www.mozilla.org/%2$s/thunderbird/%1$s/system-requirements/';
 
-	public function __construct() {
-		$this->loader = new Mozlv_Loader_JSON();
+	protected function get_loader() {
+		return Mozlv_Loader_JSON::getInstance();
 	}
 
 }

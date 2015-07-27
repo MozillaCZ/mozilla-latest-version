@@ -17,8 +17,14 @@ abstract class Mozlv_Product_Class {
 	protected $langpack_URL;
 	protected $changelog_URL;
 	protected $requirements_URL;
-	protected $loader = NULL;
 	private $version = array();
+
+	/**
+	 * Returns implementation appropriate loader.
+	 * 
+	 * @return Mozlv_Loader_Interface implementation
+	 */
+	abstract protected function get_loader();
 
 	/**
 	 * Returns latest product version in $channel for $platform.
@@ -94,9 +100,9 @@ abstract class Mozlv_Product_Class {
 		if ( $channel == NULL || $channel == '' ) {
 			$channel = $this->default_channel;
 		}
-		$resource_array = $this->loader->get( $this->resource_URL );
+		$resource_array = $this->get_loader()->get( $this->resource_URL );
 		if ( ! isset( $resource_array[ $this->channel_to_resource_index[ $channel ] ] ) && ! isset( $channel ) ) {
-			$this->loader->invalidate( $this->resource_URL );
+			$this->get_loader()->invalidate( $this->resource_URL );
 			throw new Mozlv_Invalid_Data_Exception( 'Loaded data are not valid.' );
 		}
 		return $resource_array[ $this->channel_to_resource_index[ $channel ] ];

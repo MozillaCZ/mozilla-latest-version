@@ -21,8 +21,8 @@ class Mozlv_Product_SeaMonkey extends Mozlv_Product_Class {
 	protected $changelog_URL = 'http://www.seamonkey-project.org/releases/seamonkey%1$s/';
 	protected $requirements_URL = 'http://www.seamonkey-project.org/doc/system-requirements';
 
-	public function __construct() {
-		$this->loader = new Mozlv_Loader_JSON();
+	protected function get_loader() {
+		return Mozlv_Loader_JSON::getInstance();
 	}
 
 }
