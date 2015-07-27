@@ -7,9 +7,9 @@
  */
 abstract class Mozlv_Product_Class {
 
-	protected $json_URL;
+	protected $resource_URL;
 	protected $default_channel = 'release';
-	protected $channel_to_JSON_index;
+	protected $channel_to_resource_index;
 	// %1$s will be replaced by the product version
 	// %2$s will be replaced by the language
 	// %3$s will be replaced by the platform
@@ -17,12 +17,8 @@ abstract class Mozlv_Product_Class {
 	protected $langpack_URL;
 	protected $changelog_URL;
 	protected $requirements_URL;
-	private $loader = NULL;
+	protected $loader = NULL;
 	private $version = array();
-
-	public function __construct() {
-		$this->loader = new Mozlv_JSON_Loader();
-	}
 
 	/**
 	 * Returns latest product version in $channel for $platform.
@@ -37,7 +33,7 @@ abstract class Mozlv_Product_Class {
 		}
 		try {
 			if ( ! isset( $this->version[ $channel ][ $platform ] ) ) {
-				$this->version[ $channel ][ $platform ] = $this->get_latest_version_from_JSON( $channel );
+				$this->version[ $channel ][ $platform ] = $this->get_latest_version_from_loader( $channel );
 			}
 		} catch ( Mozlv_Invalid_Data_Exception $e ) {
 		}
@@ -94,16 +90,16 @@ abstract class Mozlv_Product_Class {
 	 * @param string $channel
 	 * @return string product version
 	 */
-	protected function get_latest_version_from_JSON( $channel ) {
+	protected function get_latest_version_from_loader( $channel ) {
 		if ( $channel == NULL || $channel == '' ) {
 			$channel = $this->default_channel;
 		}
-		$json_array = json_decode( $this->loader->get_JSON( $this->json_URL ), true );
-		if ( ! isset( $json_array[ $this->channel_to_JSON_index[ $channel ] ] ) && ! isset( $channel ) ) {
-			$this->loader->invalidate( $this->json_URL );
+		$resource_array = $this->loader->get( $this->resource_URL );
+		if ( ! isset( $resource_array[ $this->channel_to_resource_index[ $channel ] ] ) && ! isset( $channel ) ) {
+			$this->loader->invalidate( $this->resource_URL );
 			throw new Mozlv_Invalid_Data_Exception( 'Loaded data are not valid.' );
 		}
-		return $json_array[ $this->channel_to_JSON_index[ $channel ] ];
+		return $resource_array[ $this->channel_to_resource_index[ $channel ] ];
 	}
 
 	/**

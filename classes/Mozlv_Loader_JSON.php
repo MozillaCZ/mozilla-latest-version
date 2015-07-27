@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Mozlv_JSON_Loader handles loading and validating JSON from remote server (or cache).
+ * Mozlv_Loader_JSON handles loading and validating JSON from remote server (or cache).
  * 
  * @author Michal Stanke <michal.stanke@mikk.cz>
  */
-class Mozlv_JSON_Loader {
+class Mozlv_Loader_JSON implements Mozlv_Loader_Interface {
 
 	private $cache;
 
@@ -13,15 +13,9 @@ class Mozlv_JSON_Loader {
 		$this->cache = Mozlv_Cache_Factory::get_cache();
 	}
 
-	/**
-	 * Returns JSON string.
-	 * 
-	 * @param string $URL of the JSON
-	 * @return string JSON or NULL if cannot be loaded
-	 */
-	public function get_JSON( $URL ) {
+	public function get( $URL ) {
 		try {
-			return $this->load_using_cache( $URL );
+			return json_decode( $this->load_using_cache( $URL ), true );
 		} catch ( Mozlv_Data_Load_Exception $e ) {
 			return NULL;
 		}

@@ -7,8 +7,8 @@
  */
 class Mozlv_Product_Firefox extends Mozlv_Product_Class {
 
-	protected $json_URL = 'https://www.mozilla.org/includes/product-details/json/firefox_versions.json';
-	protected $channel_to_JSON_index = array (
+	protected $resource_URL = 'https://www.mozilla.org/includes/product-details/json/firefox_versions.json';
+	protected $channel_to_resource_index = array (
 										'release' => 'LATEST_FIREFOX_VERSION',
 										'beta' => 'LATEST_FIREFOX_RELEASED_DEVEL_VERSION',
 										'aurora' => 'FIREFOX_AURORA',
@@ -21,5 +21,9 @@ class Mozlv_Product_Firefox extends Mozlv_Product_Class {
 	protected $langpack_URL = 'http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/%1$s/win32/xpi/%2$s.xpi';
 	protected $changelog_URL = 'https://www.mozilla.org/%2$s/firefox/%1$s/releasenotes/';
 	protected $requirements_URL = 'https://www.mozilla.org/%2$s/firefox/%1$s/system-requirements/';
+
+	public function __construct() {
+		$this->loader = new Mozlv_Loader_JSON();
+	}
 
 }

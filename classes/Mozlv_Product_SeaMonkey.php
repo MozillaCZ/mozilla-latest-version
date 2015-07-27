@@ -7,8 +7,8 @@
  */
 class Mozlv_Product_SeaMonkey extends Mozlv_Product_Class {
 
-	protected $json_URL = 'http://www.seamonkey-project.org/seamonkey_versions.json';
-	protected $channel_to_JSON_index = array (
+	protected $resource_URL = 'http://www.seamonkey-project.org/seamonkey_versions.json';
+	protected $channel_to_resource_index = array (
 										'release' => 'LATEST_SEAMONKEY_VERSION',
 										'beta' => 'LATEST_SEAMONKEY_MILESTONE_VERSION',
 										'aurora' => 'LATEST_SEAMONKEY_TESTING_VERSION',
@@ -20,5 +20,9 @@ class Mozlv_Product_SeaMonkey extends Mozlv_Product_Class {
 	protected $langpack_URL = 'http://download.cdn.mozilla.net/pub/mozilla.org/seamonkey/releases/%1$s/langpack/seamonkey-%1$s.%2$s.langpack.xpi';
 	protected $changelog_URL = 'http://www.seamonkey-project.org/releases/seamonkey%1$s/';
 	protected $requirements_URL = 'http://www.seamonkey-project.org/doc/system-requirements';
+
+	public function __construct() {
+		$this->loader = new Mozlv_Loader_JSON();
+	}
 
 }
