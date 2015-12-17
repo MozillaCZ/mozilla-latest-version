@@ -7,11 +7,8 @@
  */
 class Mozlv_Loader_JSON implements Mozlv_Loader_Interface {
 
+    private static $instance = NULL;
 	private $cache;
-
-	public function __construct() {
-		$this->cache = Mozlv_Cache_Factory::get_cache();
-	}
 
 	public function get( $URL ) {
 		try {
@@ -104,6 +101,20 @@ class Mozlv_Loader_JSON implements Mozlv_Loader_Interface {
 		} else {
 			return $json !== NULL;
 		}
+	}
+
+	/**
+	 * Returns the Mozlv_Loader_JSON singleton instance.
+	 */
+	public static function getInstance() {
+		if ( self::$instance == NULL ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+
+	private function __construct() {
+		$this->cache = Mozlv_Cache_Factory::get_cache();
 	}
 
 }

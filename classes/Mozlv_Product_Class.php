@@ -17,8 +17,14 @@ abstract class Mozlv_Product_Class {
 	protected $langpack_URL;
 	protected $changelog_URL;
 	protected $requirements_URL;
-	protected $loader = NULL;
 	private $version = array();
+
+	/**
+	 * Returns implementation appropriate loader.
+	 * 
+	 * @return Mozlv_Loader_Interface implementation
+	 */
+	abstract protected function get_loader();
 
 	/**
 	 * Returns latest product version in $channel for $platform.
@@ -27,17 +33,17 @@ abstract class Mozlv_Product_Class {
 	 * @param string $platform
 	 * @return string product version
 	 */
-	public function get_latest_version( $channel, $platform = NULL ) {
+	public function get_latest_version( $channel ) {
 		if ( $channel == NULL || $channel == '' ) {
 			$channel = $this->default_channel;
 		}
 		try {
-			if ( ! isset( $this->version[ $channel ][ $platform ] ) ) {
-				$this->version[ $channel ][ $platform ] = $this->get_latest_version_from_loader( $channel );
+			if ( ! isset( $this->version[ $channel ] ) ) {
+				$this->version[ $channel ] = $this->get_latest_version_from_loader( $channel );
 			}
 		} catch ( Mozlv_Invalid_Data_Exception $e ) {
 		}
-		return $this->version[ $channel ][ $platform ];
+		return $this->version[ $channel ];
 	}
 
 	/**
@@ -94,9 +100,9 @@ abstract class Mozlv_Product_Class {
 		if ( $channel == NULL || $channel == '' ) {
 			$channel = $this->default_channel;
 		}
-		$resource_array = $this->loader->get( $this->resource_URL );
+		$resource_array = $this->get_loader()->get( $this->resource_URL );
 		if ( ! isset( $resource_array[ $this->channel_to_resource_index[ $channel ] ] ) && ! isset( $channel ) ) {
-			$this->loader->invalidate( $this->resource_URL );
+			$this->get_loader()->invalidate( $this->resource_URL );
 			throw new Mozlv_Invalid_Data_Exception( 'Loaded data are not valid.' );
 		}
 		return $resource_array[ $this->channel_to_resource_index[ $channel ] ];
@@ -134,7 +140,7 @@ abstract class Mozlv_Product_Class {
 				$platform = 'osx';
 				break;
 		}
-		$version = $this->get_latest_version( $channel, $platform );
+		$version = $this->get_latest_version( $channel );
 		if ( $version != NULL ) {
 			return sprintf( $url, $version, Mozlv_Options::getInstance()->get_links_lang(), $platform );
 		} else {

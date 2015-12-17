@@ -7,7 +7,7 @@
  */
 class Mozlv_Product_Mobile extends Mozlv_Product_Class {
 
-	protected $resource_URL = 'https://www.mozilla.org/includes/product-details/json/mobile_details.json';
+	protected $resource_URL = 'https://svn.mozilla.org/libs/product-details/json/mobile_details.json';
 	protected $channel_to_resource_index = array (
 										'release' => 'version',
 										'beta' => 'beta_version',
@@ -20,8 +20,8 @@ class Mozlv_Product_Mobile extends Mozlv_Product_Class {
 	protected $changelog_URL = 'https://www.mozilla.org/%2$s/mobile/%1$s/releasenotes/';
 	protected $requirements_URL = 'https://support.mozilla.org/kb/will-firefox-work-my-mobile-device';
 
-	public function __construct() {
-		$this->loader = new Mozlv_Loader_JSON();
+	protected function get_loader() {
+		return Mozlv_Loader_JSON::getInstance();
 	}
 
 }
