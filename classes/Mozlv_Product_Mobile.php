@@ -7,7 +7,7 @@
  */
 class Mozlv_Product_Mobile extends Mozlv_Product_Class {
 
-	protected $resource_URL = 'https://www.mozilla.org/includes/product-details/json/mobile_details.json';
+	protected $resource_URL = 'https://svn.mozilla.org/libs/product-details/json/mobile_details.json';
 	protected $channel_to_resource_index = array (
 										'release' => 'version',
 									);
