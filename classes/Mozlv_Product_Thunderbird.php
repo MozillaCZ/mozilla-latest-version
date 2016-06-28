@@ -3,7 +3,7 @@
 /**
  * Thunderbird product class.
  * 
- * @author Michal Stanke <michal.stanke@mikk.cz>
+ * @author Michal Stanke <mstanke@mozilla.cz>
  */
 class Mozlv_Product_Thunderbird extends Mozlv_Product_Class {
 

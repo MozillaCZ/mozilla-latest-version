@@ -3,7 +3,7 @@
 /**
  * Mozlv_Options is singleton handling the plugin options and its installation.
  * 
- * @author Michal Stanke <michal.stanke@mikk.cz>
+ * @author Michal Stanke <mstanke@mozilla.cz>
  */
 class Mozlv_Options {
 

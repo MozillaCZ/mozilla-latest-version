@@ -3,7 +3,7 @@
 /**
  * Mozlv_Cache_Factory is a static class to get the cache implementation according to the plugin settings.
  *
- * @author Michal Stanke <michal.stanke@mikk.cz>
+ * @author Michal Stanke <mstanke@mozilla.cz>
  */
 class Mozlv_Cache_Factory {
 
