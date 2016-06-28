@@ -30,6 +30,12 @@ class Mozlv_Product_Factory {
 				}
 				return self::$products[ $product ];
 				break;
+			case 'ios':
+				if ( ! isset( self::$products[ $product ] ) ) {
+					self::$products[ $product ] = new Mozlv_Product_iOS();
+				}
+				return self::$products[ $product ];
+				break;
 			case 'thunderbird':
 				if ( ! isset( self::$products[ $product ] ) ) {
 					self::$products[ $product ] = new Mozlv_Product_Thunderbird();
