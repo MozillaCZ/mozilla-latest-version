@@ -133,14 +133,15 @@ class Mozlv_Settings_Page {
 			</ul>
 			<h3 class="title">Attributes</h3>
 			<ul>
-				<li><code>product</code> possible values are <code>firefox</code> for desktop, <code>fennec</code> or <code>mobile</code> for Android, <code>thunderbird</code> and <code>seamonkey</code></li>
+				<li><code>product</code> possible values are <code>firefox</code> for desktop, <code>fennec</code> or <code>mobile</code> for Android, <code>ios</code> for iOS, <code>thunderbird</code> and <code>seamonkey</code></li>
 				<li><code>platform</code> specifies the platform for download links. Possible values are <code>win</code>, <code>win64</code>, <code>linux</code>, <code>lin</code>, <code>linux64</code>, <code>lin64</code>, <code>osx</code> and <code>mac</code></li>
 				<li><code>channel</code> specifies the channel of product are is product dependent (if no specified, <code>release</code> will be used)</li>
 			</ul>
 			<h3 class="title">Channel</h3>
 			<ul>
 				<li>Firefox: <code>release</code>, <code>beta</code>, <code>aurora</code>, <code>esr</code></li>
-				<li>Mobile: <code>release</code></li>
+				<li>Mobile: <code>release</code>, <code>beta</code></li>
+				<li>iOS: <code>release</code>, <code>beta</code></li>
 				<li>Thundebird: <code>release</code></li>
 				<li>SeaMonkey: <code>release</code>, <code>beta</code>, <code>aurora</code></li>
 			</ul>

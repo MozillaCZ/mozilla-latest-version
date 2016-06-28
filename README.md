@@ -28,12 +28,13 @@ The Mozilla.sk CMS plugin shortcodes work as [self-closing](https://codex.wordpr
 Simply use [do_shortcode()](https://codex.wordpress.org/Function_Reference/do_shortcode) function.
 
 ### Attributes
-* `product` possible values are `firefox` for desktop, `fennec` or `mobile` for Android, `thunderbird` and `seamonkey`
+* `product` possible values are `firefox` for desktop, `fennec` or `mobile` for Android, `ios` for iOS, `thunderbird` and `seamonkey`
 * `platform` specifies the platform for download links. Possible values are `win`, `win64`, `linux`, `lin`, `linux64`, `lin64`, `osx` and `mac`
 * `channel` specifies the channel of product are is product dependent (if no specified, `release` will be used)
 
 ### Channel
 * Firefox: `release`, `beta`, `aurora`, `esr`
-* Mobile: `release`
+* Mobile: `release`, `beta`
+* iOS: `release`, `beta`
 * Thundebird: `release`
 * SeaMonkey: `release`, `beta`, `aurora`
