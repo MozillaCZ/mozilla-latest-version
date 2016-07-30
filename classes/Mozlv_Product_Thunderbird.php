@@ -7,7 +7,7 @@
  */
 class Mozlv_Product_Thunderbird extends Mozlv_Product_Class {
 
-	protected $resource_URL = 'https://product-details.mozilla.org/thunderbird_versions.json';
+	protected $resource_URL = 'https://product-details.mozilla.org/1.0/thunderbird_versions.json';
 	protected $channel_to_resource_index = array (
 										'release' => 'LATEST_THUNDERBIRD_VERSION',
 									);
