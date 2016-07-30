@@ -7,7 +7,7 @@
  */
 class Mozlv_Product_Mobile extends Mozlv_Product_Class {
 
-	protected $resource_URL = 'https://product-details.mozilla.org/mobile_versions.json';
+	protected $resource_URL = 'https://product-details.mozilla.org/1.0/mobile_versions.json';
 	protected $channel_to_resource_index = array (
 										'release' => 'version',
 										'beta' => 'beta_version',

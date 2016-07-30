@@ -7,7 +7,7 @@
  */
 class Mozlv_Product_iOS extends Mozlv_Product_Class {
 
-	protected $resource_URL = 'https://product-details.mozilla.org/mobile_versions.json';
+	protected $resource_URL = 'https://product-details.mozilla.org/1.0/mobile_versions.json';
 	protected $channel_to_resource_index = array (
 										'release' => 'ios_version',
 										'beta' => 'ios_beta_version',

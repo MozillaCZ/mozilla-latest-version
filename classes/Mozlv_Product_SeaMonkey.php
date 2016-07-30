@@ -7,7 +7,7 @@
  */
 class Mozlv_Product_SeaMonkey extends Mozlv_Product_Class {
 
-	protected $resource_URL = 'http://www.seamonkey-project.org/seamonkey_versions.json';
+	protected $resource_URL = 'http://www.seamonkey-project.org/1.0/seamonkey_versions.json';
 	protected $channel_to_resource_index = array (
 										'release' => 'LATEST_SEAMONKEY_VERSION',
 										'beta' => 'LATEST_SEAMONKEY_MILESTONE_VERSION',
