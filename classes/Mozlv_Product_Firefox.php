@@ -13,6 +13,7 @@ class Mozlv_Product_Firefox extends Mozlv_Product_Class {
 										'beta' => 'LATEST_FIREFOX_RELEASED_DEVEL_VERSION',
 										'aurora' => 'FIREFOX_AURORA',
 										'esr' => 'FIREFOX_ESR',
+										'esr-next' => 'FIREFOX_ESR_NEXT',
 									);
 	// %1$s will be replaced by the product version
 	// %2$s will be replaced by the language

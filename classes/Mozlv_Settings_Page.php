@@ -139,7 +139,7 @@ class Mozlv_Settings_Page {
 			</ul>
 			<h3 class="title">Channel</h3>
 			<ul>
-				<li>Firefox: <code>release</code>, <code>beta</code>, <code>aurora</code>, <code>esr</code></li>
+				<li>Firefox: <code>release</code>, <code>beta</code>, <code>aurora</code>, <code>esr</code>, <code>esr-next</code></li>
 				<li>Mobile: <code>release</code>, <code>beta</code></li>
 				<li>iOS: <code>release</code>, <code>beta</code></li>
 				<li>Thundebird: <code>release</code></li>
