@@ -33,8 +33,8 @@ Simply use [do_shortcode()](https://codex.wordpress.org/Function_Reference/do_sh
 * `channel` specifies the channel of product are is product dependent (if no specified, `release` will be used)
 
 ### Channel
-* Firefox: `release`, `beta`, `aurora`, `esr`, `esr-next`
+* Firefox: `release`, `beta`, `devedition`, `esr`
 * Mobile: `release`, `beta`
 * iOS: `release`, `beta`
-* Thundebird: `release`
-* SeaMonkey: `release`, `beta`, `aurora`
+* Thundebird: `release`, `beta`
+* SeaMonkey: `release`, `beta`
