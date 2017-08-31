@@ -24,4 +24,11 @@ class Mozlv_Product_iOS extends Mozlv_Product_Class {
 		return Mozlv_Loader_JSON::getInstance();
 	}
 
+	protected function get_latest_url( $url, $channel, $platform ) {
+		if ( $url == $this->download_URL && ( $channel == 'beta' ) ) {
+			return parent::get_latest_url( 'https://www.mozilla.org/%2$s/firefox/ios/testflight', $channel, $platform );
+		} else {
+			return parent::get_latest_url( $url, $channel, $platform );
+		}
+	}
 }
