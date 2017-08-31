@@ -18,6 +18,7 @@ abstract class Mozlv_Product_Class {
 	protected $changelog_URL;
 	protected $requirements_URL;
 	private $version = array();
+	private $cache;
 
 	/**
 	 * Returns implementation appropriate loader.
@@ -39,7 +40,7 @@ abstract class Mozlv_Product_Class {
 		}
 		try {
 			if ( ! isset( $this->version[ $channel ] ) ) {
-				$this->version[ $channel ] = $this->get_latest_version_from_loader( $channel );
+				$this->version[ $channel ] = $this->get_latest_version_via_cache( $channel );
 			}
 		} catch ( Mozlv_Invalid_Data_Exception $e ) {
 		}
@@ -95,17 +96,41 @@ abstract class Mozlv_Product_Class {
 	 * 
 	 * @param string $channel
 	 * @return string product version
+	 * @throw Mozlv_Invalid_Data_Exception if the loaded data are invalid or cannot be parsed
 	 */
-	protected function get_latest_version_from_loader( $channel ) {
-		if ( $channel == NULL || $channel == '' ) {
-			$channel = $this->default_channel;
-		}
-		$resource_array = $this->get_loader()->get( $this->resource_URL );
+	protected function get_latest_version_via_cache( $channel ) {
+		$in_cache = basename( $this->resource_URL );
+		$json = $this->get_json_from_cache_or_loader( $in_cache );
+		$resource_array = $this->get_loader()->load_from( $json );
 		if ( ! isset( $resource_array[ $this->channel_to_resource_index[ $channel ] ] ) && ! isset( $channel ) ) {
-			$this->get_loader()->invalidate( $this->resource_URL );
+			$this->cache()->remove( $in_cache );
 			throw new Mozlv_Invalid_Data_Exception( 'Loaded data are not valid.' );
 		}
 		return $resource_array[ $this->channel_to_resource_index[ $channel ] ];
+	}
+
+	/**
+	 * Loads json from cache (if present and valid), or via loader (and populates the cache).
+	 * 
+	 * @param string $in_cache key
+	 * @return string json
+	 */
+	protected function get_json_from_cache_or_loader( $in_cache ) {
+		if ( $this->cache->valid( $in_cache ) ) {
+			$json = $this->cache->get( $in_cache );
+		} else {
+			try {
+				$json = $this->get_loader()->load( $this->resource_URL );
+				$this->cache->store( $in_cache, $json );
+			} catch ( Exception $e ) {
+				if ( $this->cache->get( $in_cache ) ) {
+					$json = $this->cache->get( $in_cache );
+				} else {
+					throw $e;
+				}
+			}
+		}
+		return $json;
 	}
 
 	/**
@@ -148,4 +173,7 @@ abstract class Mozlv_Product_Class {
 		}
 	}
 
+	public function __construct() {
+		$this->cache = Mozlv_Cache_Factory::get_cache();
+	}
 }

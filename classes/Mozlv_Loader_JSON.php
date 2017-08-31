@@ -8,44 +8,9 @@
 class Mozlv_Loader_JSON implements Mozlv_Loader_Interface {
 
     private static $instance = NULL;
-	private $cache;
 
-	public function get( $URL ) {
-		try {
-			return json_decode( $this->load_using_cache( $URL ), true );
-		} catch ( Mozlv_Data_Load_Exception $e ) {
-			return NULL;
-		}
-	}
-
-	public function invalidate( $URL ) {
-		return $this->cache->remove( basename( $URL ) );
-	}
-
-	/**
-	 * Returns JSON string from cache or loads it from $URL if not in cache or expired.
-	 * 
-	 * @param string $URL of the JSON
-	 * @return string JSON
-	 * @throw Exception from the load_directly function
-	 */
-	private function load_using_cache( $URL ) {
-		$in_cache = basename( $URL );
-		if ( $this->cache->valid( $in_cache ) ) {
-			$json = $this->cache->get( $in_cache );
-		} else {
-			try {
-				$json = $this->load_directly( $URL );
-				$this->cache->store( $in_cache, $json );
-			} catch ( Exception $e ) {
-				if ( $this->cache->get( $in_cache ) ) {
-					$json = $this->cache->get( $in_cache );
-				} else {
-					throw $e;
-				}
-			}
-		}
-		return $json;
+	public function load_from( $data ) {
+		return json_decode( $data, true );
 	}
 
 	/**
@@ -56,7 +21,7 @@ class Mozlv_Loader_JSON implements Mozlv_Loader_Interface {
 	 * @throw Mozlv_Data_Load_Exception if the data cannot be loaded
 	 * @throw Mozlv_Invalid_Data_Exception if the loaded data are invalid or cannot be parsed
 	 */
-	private function load_directly($URL) {
+	public function load( $URL ) {
 		$context = stream_context_create(
 			array(
 				'http' => array('timeout' => MOZLV_DATA_LOAD_TIMEOUT)
@@ -112,9 +77,4 @@ class Mozlv_Loader_JSON implements Mozlv_Loader_Interface {
 		}
 		return self::$instance;
 	}
-
-	private function __construct() {
-		$this->cache = Mozlv_Cache_Factory::get_cache();
-	}
-
 }
