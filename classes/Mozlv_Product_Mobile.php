@@ -11,6 +11,7 @@ class Mozlv_Product_Mobile extends Mozlv_Product_Class {
 	protected $channel_to_resource_index = array (
 										'release' => 'version',
 										'beta' => 'beta_version',
+										'nightly' => 'nightly_version',
 									);
 	// %1$s will be replaced by the product version
 	// %2$s will be replaced by the language
@@ -25,10 +26,13 @@ class Mozlv_Product_Mobile extends Mozlv_Product_Class {
 	}
 
 	protected function get_latest_url( $url, $channel, $platform ) {
-		if ( $url == $this->download_URL && ( $channel == 'beta' ) ) {
-			return parent::get_latest_url( 'https://play.google.com/store/apps/details?id=org.mozilla.firefox_beta', $channel, $platform );
-		} else {
-			return parent::get_latest_url( $url, $channel, $platform );
+		if ( $url == $this->download_URL ) {
+			if ( $channel == 'beta' ) {
+				return parent::get_latest_url( 'https://play.google.com/store/apps/details?id=org.mozilla.firefox_beta', $channel, $platform );
+			} else if ( $channel == 'nightly' ) {
+				return parent::get_latest_url( 'https://play.google.com/store/apps/details?id=org.mozilla.fennec_aurora', $channel, $platform );
+			}
 		}
+		return parent::get_latest_url( $url, $channel, $platform );
 	}
 }

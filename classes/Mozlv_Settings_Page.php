@@ -139,8 +139,8 @@ class Mozlv_Settings_Page {
 			</ul>
 			<h3 class="title">Channel</h3>
 			<ul>
-				<li>Firefox: <code>release</code>, <code>beta</code>, <code>devedition</code>, <code>esr</code></li>
-				<li>Mobile: <code>release</code>, <code>beta</code></li>
+				<li>Firefox: <code>release</code>, <code>beta</code>, <code>devedition</code>, <code>nightly</code>, <code>esr</code></li>
+				<li>Mobile: <code>release</code>, <code>beta</code>, <code>nightly</code></li>
 				<li>iOS: <code>release</code>, <code>beta</code></li>
 				<li>Thundebird: <code>release</code>, <code>beta</code></li>
 				<li>SeaMonkey: <code>release</code>, <code>beta</code></li>
