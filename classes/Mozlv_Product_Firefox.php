@@ -27,4 +27,11 @@ class Mozlv_Product_Firefox extends Mozlv_Product_Class {
 		return Mozlv_Loader_JSON::getInstance();
 	}
 
+	protected function get_latest_url( $url, $channel, $platform ) {
+		if ( $url == $this->download_URL && ( $channel == 'aurora' || $channel == 'devedition' ) ) {
+			return parent::get_latest_url( 'https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=%3$s&lang=%2$s', $channel, $platform );
+		} else {
+			return parent::get_latest_url( $url, $channel, $platform );
+		}
+	}
 }
