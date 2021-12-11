@@ -4,7 +4,7 @@ Plugin Name:		Mozilla Latest Version
 Plugin URI:		https://github.com/MozillaCZ/mozilla-latest-version
 Update URI:		https://api.github.com/repos/MozillaCZ/mozilla-latest-version/releases/latest
 Description:		Mozilla Latest Version WordPress plugin automatically checks the Mozilla application JSONs so you can always have the latest download link and version number on your website.
-Version:		2.0
+Version:		2.0.1
 Author:			Mozilla.cz
 Author URI:		https://www.mozilla.cz/
 License:		GPL2
