@@ -19,20 +19,18 @@ class Mozlv_Options {
 	 * Handles the plugin installation and its options registration (including default values).
 	 */
 	public function install() {
-		$mozlv_options = self::getInstance();
-		add_option( $mozlv_options->cache_type, $mozlv_options->cache_type_transients_api );
-		add_option( $mozlv_options->cache_expire, 3600 );
-		add_option( $mozlv_options->links_lang, 'en-US' );
+		add_option( $this->cache_type, $this->cache_type_transients_api );
+		add_option( $this->cache_expire, 3600 );
+		add_option( $this->links_lang, 'en-US' );
 	}
 
 	/**
 	 * Registers the plugin settings.
 	 */
 	public function register_settings() {
-		$mozlv_options = self::getInstance();
-		register_setting( $mozlv_options->option_group, $mozlv_options->cache_type );
-		register_setting( $mozlv_options->option_group, $mozlv_options->cache_expire );
-		register_setting( $mozlv_options->option_group, $mozlv_options->links_lang );
+		register_setting( $this->option_group, $this->cache_type );
+		register_setting( $this->option_group, $this->cache_expire );
+		register_setting( $this->option_group, $this->links_lang );
 	}
 
 	/**
@@ -44,7 +42,7 @@ class Mozlv_Options {
 			'MOZLV Settings',
 			'manage_options',
 			'Mozlv_Settings_Page.php',
-			array( new Mozlv_Settings_Page( self::getInstance()->option_group ), 'main' )
+			array( new Mozlv_Settings_Page( $this->option_group ), 'main' )
 		);
 	}
 

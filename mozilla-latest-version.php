@@ -37,10 +37,10 @@ function mozlv_autoload( $class_name ) {
 }
 
 // Plugin installation and admin options
-register_activation_hook( MOZLV_PLUGIN_FILE, array('Mozlv_Options', 'install') );
+register_activation_hook( MOZLV_PLUGIN_FILE, array(Mozlv_Options::getInstance(), 'install') );
 if ( is_admin() ){
-	add_action( 'admin_init', array('Mozlv_Options', 'register_settings') );
-	add_action( 'admin_menu', array('Mozlv_Options', 'add_menu') );
+	add_action( 'admin_init', array(Mozlv_Options::getInstance(), 'register_settings') );
+	add_action( 'admin_menu', array(Mozlv_Options::getInstance(), 'add_menu') );
 }
 
 // Mozilla Latest Version shortcodes
