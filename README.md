@@ -1,5 +1,5 @@
 # Mozilla Latest Version
-Mozilla Latest Version WordPress plugin automatically checks the Mozilla application JSONs so you can always have the latest download link and version number on your website.
+Mozilla Latest Version WordPress plugin automatically checks the Mozilla application JSONs published from https://github.com/mozilla-releng/product-details, so you can always have the latest download link and version number on your website.
 
 ## Settings
 The plugin settings you can find in _WordPress Admin -> Options -> MOZLV Settings_.
