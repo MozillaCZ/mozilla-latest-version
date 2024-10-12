@@ -17,21 +17,34 @@ class Mozlv_Product_Factory {
 		switch ( $product ) {
 			case 'firefox':
 				if ( ! isset( self::$products[ $product ] ) ) {
-					self::$products[ $product ] = new Mozlv_Product_Firefox();
+					self::$products[ $product ] = new Mozlv_Product_Firefox_Desktop();
 				}
 				return self::$products[ $product ];
 				break;
+			case 'android':
+			case 'mobile':
 			case 'fenix':
 			case 'fennec':
-			case 'mobile':
 				if ( ! isset( self::$products[ $product ] ) ) {
-					self::$products[ $product ] = new Mozlv_Product_Mobile();
+					self::$products[ $product ] = new Mozlv_Product_Firefox_Android();
 				}
 				return self::$products[ $product ];
 				break;
 			case 'ios':
 				if ( ! isset( self::$products[ $product ] ) ) {
-					self::$products[ $product ] = new Mozlv_Product_iOS();
+					self::$products[ $product ] = new Mozlv_Product_Firefox_iOS();
+				}
+				return self::$products[ $product ];
+				break;
+			case 'focus-android':
+				if ( ! isset( self::$products[ $product ] ) ) {
+					self::$products[ $product ] = new Mozlv_Product_Focus_Android();
+				}
+				return self::$products[ $product ];
+				break;
+			case 'focus-ios':
+				if ( ! isset( self::$products[ $product ] ) ) {
+					self::$products[ $product ] = new Mozlv_Product_Focus_iOS();
 				}
 				return self::$products[ $product ];
 				break;

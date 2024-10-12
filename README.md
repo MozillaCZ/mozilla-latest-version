@@ -17,13 +17,15 @@ There are four shortcodes added by this plugin.
 * `[mozilla-latest-requirements-url product=product]` - requirements page URL for the latest version of the specified _product_
 
 ### Attributes
-* `product`: `firefox` (Firefox for desktop), `fenix`/`fennec`/`mobile` (Firefox for Android), `ios` (Firefox for iOS), `thunderbird` and `seamonkey`
+* `product`: `firefox` (Firefox for desktop), `android`/`mobile`/`fenix`/`fennec` (Firefox for Android), `ios` (Firefox for iOS), `focus-android`, `focus-ios`, `thunderbird` and `seamonkey`
 * `platform`: `win`, `win64`, `msstore`, `linux`, `linux64`, `flatpak`, `snap`, `macos`
 * `channel` specifies the channel of product are is product dependent (if no specified, `release` will be used)
 
 #### Channel
-* Firefox: `release`, `beta`, `devedition`, `nightly`, `esr`
-* Mobile: `release`, `beta`, `nightly`
-* iOS: `release`, `beta`
+* Firefox for Desktop: `release`, `beta`, `devedition`, `nightly`, `esr`
+* Firefox for Android: `release`, `beta`, `nightly`
+* Firefox for iOS: `release`, `beta`
+* Focus for Android: `release`, `beta`
+* Focus for iOS: `release`, `beta`
 * Thundebird: `release`, `beta`
 * SeaMonkey: `release`, `beta`

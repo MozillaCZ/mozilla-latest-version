@@ -3,7 +3,7 @@
 /**
  * Firefox for iOS
  */
-class Mozlv_Product_iOS extends Mozlv_Product_Class {
+class Mozlv_Product_Firefox_iOS extends Mozlv_Product_Class {
 
 	protected $resource_URL = 'https://product-details.mozilla.org/1.0/mobile_versions.json';
 	protected $channel_to_resource_index = array (
@@ -23,10 +23,11 @@ class Mozlv_Product_iOS extends Mozlv_Product_Class {
 	}
 
 	protected function get_latest_url( $url, $channel, $platform ) {
-		if ( $url == $this->download_URL && ( $channel == 'beta' ) ) {
-			return parent::get_latest_url( 'https://www.mozilla.org/%2$s/firefox/ios/testflight', $channel, $platform );
-		} else {
-			return parent::get_latest_url( $url, $channel, $platform );
+		if ( $url == $this->download_URL ) {
+			if ( $channel == 'beta' ) {
+				return parent::get_latest_url( 'https://www.mozilla.org/%2$s/firefox/ios/testflight', $channel, $platform );
+			}
 		}
+		return parent::get_latest_url( $url, $channel, $platform );
 	}
 }

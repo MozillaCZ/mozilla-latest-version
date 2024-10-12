@@ -3,7 +3,7 @@
 /**
  * Firefox for desktop
  */
-class Mozlv_Product_Firefox extends Mozlv_Product_Class {
+class Mozlv_Product_Firefox_Desktop extends Mozlv_Product_Class {
 
 	protected $resource_URL = 'https://product-details.mozilla.org/1.0/firefox_versions.json';
 	protected $channel_to_resource_index = array (
