@@ -11,7 +11,6 @@ class Mozlv_Product_Firefox extends Mozlv_Product_Class {
 	protected $channel_to_resource_index = array (
 										'release' => 'LATEST_FIREFOX_VERSION',
 										'beta' => 'LATEST_FIREFOX_RELEASED_DEVEL_VERSION',
-										'aurora' => 'FIREFOX_DEVEDITION',
 										'devedition' => 'FIREFOX_DEVEDITION',
 										'nightly' => 'FIREFOX_NIGHTLY',
 										'esr' => 'FIREFOX_ESR',
@@ -30,7 +29,7 @@ class Mozlv_Product_Firefox extends Mozlv_Product_Class {
 
 	protected function get_latest_url( $url, $channel, $platform ) {
 		if ( $url == $this->download_URL ) {
-			if ( $channel == 'aurora' || $channel == 'devedition' ) {
+			if ( $channel == 'devedition' ) {
 				return parent::get_latest_url( 'https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=%3$s&lang=%2$s', $channel, $platform );
 			} else if ( $channel == 'nightly' ) {
 				return parent::get_latest_url( 'https://download.mozilla.org/?product=firefox-nightly-latest-l10n-ssl&os=%3$s&lang=%2$s', $channel, $platform );

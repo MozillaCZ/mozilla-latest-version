@@ -12,12 +12,12 @@ There are four shortcodes added by this plugin.
 
 * `[mozilla-latest-version product=product]` - the latest version number of the specified _product_
 * `[mozilla-latest-download-url product=product platform=platform]` - download URL of the latest version of the specified _product_ for _platform_
-* `[mozilla-latest-langpack-url product=product platform=platform]` - download URL of the latest langpack (.xpi) for the specified _product_ and _platform_ (not available for `fennec`)
+* `[mozilla-latest-langpack-url product=product platform=platform]` - download URL of the latest langpack (.xpi) for the specified _product_ and _platform_ (only available for desktop products)
 * `[mozilla-latest-changelog-url product=product]` - changelog page URL for the latest version of the specified _product_
 * `[mozilla-latest-requirements-url product=product]` - requirements page URL for the latest version of the specified _product_
 
 ### Attributes
-* `product` possible values are `firefox` for desktop, `fennec` or `mobile` for Android, `ios` for iOS, `thunderbird` and `seamonkey`
+* `product` possible values are `firefox` for desktop, `fenix`/`fennec`/`mobile` for Android, `ios` for iOS, `thunderbird` and `seamonkey`
 * `platform` specifies the platform for download links. Possible values are `win`, `win64`, `linux`, `lin`, `linux64`, `lin64`, `osx` and `mac`
 * `channel` specifies the channel of product are is product dependent (if no specified, `release` will be used)
 

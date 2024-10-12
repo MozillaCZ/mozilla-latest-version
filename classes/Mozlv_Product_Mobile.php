@@ -30,7 +30,7 @@ class Mozlv_Product_Mobile extends Mozlv_Product_Class {
 			if ( $channel == 'beta' ) {
 				return parent::get_latest_url( 'https://play.google.com/store/apps/details?id=org.mozilla.firefox_beta', $channel, $platform );
 			} else if ( $channel == 'nightly' ) {
-				return parent::get_latest_url( 'https://play.google.com/store/apps/details?id=org.mozilla.fennec_aurora', $channel, $platform );
+				return parent::get_latest_url( 'https://play.google.com/store/apps/details?id=org.mozilla.fenix', $channel, $platform );
 			}
 		}
 		return parent::get_latest_url( $url, $channel, $platform );
