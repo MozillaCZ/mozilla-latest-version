@@ -1,9 +1,7 @@
 <?php
 
 /**
- * SeaMonkey product class.
- *
- * @author Michal Stanke <mstanke@mozilla.cz>
+ * SeaMonkey
  */
 class Mozlv_Product_SeaMonkey extends Mozlv_Product_Class {
 

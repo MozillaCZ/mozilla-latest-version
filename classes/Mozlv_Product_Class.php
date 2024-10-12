@@ -2,8 +2,6 @@
 
 /**
  * Mozlv_Product_Class is an abstract class which has to be extended by all product classes.
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
  */
 abstract class Mozlv_Product_Class {
 

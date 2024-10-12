@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Mozlv_Loader_Interface
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
- */
 interface Mozlv_Loader_Interface {
 
 	/**

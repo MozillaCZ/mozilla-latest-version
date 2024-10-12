@@ -2,8 +2,6 @@
 
 /**
  * Mozlv_Cache_File is one of the Mozlv_Cache_Interface implematations, which stores values in standalone files in directory defined by MOZLV_CACHE_FILES_DIR.
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
  */
 class Mozlv_Cache_File implements Mozlv_Cache_Interface {
 

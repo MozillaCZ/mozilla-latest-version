@@ -2,8 +2,6 @@
 
 /**
  * Mozlv_Loader_JSON handles loading and validating JSON from remote server (or cache).
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
  */
 class Mozlv_Loader_JSON implements Mozlv_Loader_Interface {
 

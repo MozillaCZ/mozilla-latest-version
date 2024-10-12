@@ -2,8 +2,6 @@
 
 /**
  * Mozlv_Settings_Page outputs the plugin settings page HTML code.
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
  */
 class Mozlv_Settings_Page {
 

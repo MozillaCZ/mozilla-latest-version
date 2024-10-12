@@ -1,9 +1,7 @@
 <?php
 
 /**
- * Firefox product class.
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
+ * Firefox for desktop
  */
 class Mozlv_Product_Firefox extends Mozlv_Product_Class {
 

@@ -2,8 +2,6 @@
 
 /**
  * Mozlv_Product_Factory is a static class to get the product class according to the shortcode attribute.
- *
- * @author Michal Stanke <mstanke@mozilla.cz>
  */
 class Mozlv_Product_Factory {
 

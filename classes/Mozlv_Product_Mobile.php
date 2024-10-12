@@ -1,9 +1,7 @@
 <?php
 
 /**
- * Firefox for Android product class.
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
+ * Firefox for Android
  */
 class Mozlv_Product_Mobile extends Mozlv_Product_Class {
 

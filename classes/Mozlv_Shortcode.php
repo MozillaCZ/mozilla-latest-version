@@ -2,8 +2,6 @@
 
 /**
  * Mozlv_Shortcode contains all functions neccessary to handle the shortcodes.
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
  */
 class Mozlv_Shortcode {
 

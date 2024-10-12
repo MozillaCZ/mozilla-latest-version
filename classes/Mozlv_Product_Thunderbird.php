@@ -1,9 +1,7 @@
 <?php
 
 /**
- * Thunderbird product class.
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
+ * Thunderbird for desktop
  */
 class Mozlv_Product_Thunderbird extends Mozlv_Product_Class {
 

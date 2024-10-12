@@ -1,9 +1,7 @@
 <?php
 
 /**
- * Firefox for iOS product class.
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
+ * Firefox for iOS
  */
 class Mozlv_Product_iOS extends Mozlv_Product_Class {
 

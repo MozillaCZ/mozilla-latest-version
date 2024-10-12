@@ -2,8 +2,6 @@
 
 /**
  * Mozlv_Cache_Interface is an interface which has to be implemented by all cache classes.
- * 
- * @author Michal Stanke <mstanke@mozilla.cz>
  */
 interface Mozlv_Cache_Interface {
 
