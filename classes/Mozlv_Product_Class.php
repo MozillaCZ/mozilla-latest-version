@@ -176,7 +176,7 @@ abstract class Mozlv_Product_Class {
 				break;
 		}
 		$version = $this->get_latest_version( $channel );
-		if ( $version != NULL ) {
+		if ( $version !== NULL ) {
 			return sprintf( $url, $version, Mozlv_Options::getInstance()->get_links_lang(), $platform );
 		} else {
 			return NULL;
