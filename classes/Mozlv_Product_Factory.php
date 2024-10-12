@@ -16,45 +16,54 @@ class Mozlv_Product_Factory {
 	public static function get_product( $product ) {
 		switch ( $product ) {
 			case 'firefox':
+				$product = 'firefox';
 				if ( ! isset( self::$products[ $product ] ) ) {
 					self::$products[ $product ] = new Mozlv_Product_Firefox_Desktop();
 				}
 				return self::$products[ $product ];
 				break;
+			case 'firefox-android':
 			case 'android':
 			case 'mobile':
 			case 'fenix':
 			case 'fennec':
+				$product = 'firefox-android';
 				if ( ! isset( self::$products[ $product ] ) ) {
 					self::$products[ $product ] = new Mozlv_Product_Firefox_Android();
 				}
 				return self::$products[ $product ];
 				break;
+			case 'firefox-ios':
 			case 'ios':
+				$product = 'firefox-ios';
 				if ( ! isset( self::$products[ $product ] ) ) {
 					self::$products[ $product ] = new Mozlv_Product_Firefox_iOS();
 				}
 				return self::$products[ $product ];
 				break;
 			case 'focus-android':
+				$product = 'focus-android';
 				if ( ! isset( self::$products[ $product ] ) ) {
 					self::$products[ $product ] = new Mozlv_Product_Focus_Android();
 				}
 				return self::$products[ $product ];
 				break;
 			case 'focus-ios':
+				$product = 'focus-ios';
 				if ( ! isset( self::$products[ $product ] ) ) {
 					self::$products[ $product ] = new Mozlv_Product_Focus_iOS();
 				}
 				return self::$products[ $product ];
 				break;
 			case 'thunderbird':
+				$product = 'thunderbird';
 				if ( ! isset( self::$products[ $product ] ) ) {
 					self::$products[ $product ] = new Mozlv_Product_Thunderbird();
 				}
 				return self::$products[ $product ];
 				break;
 			case 'seamonkey':
+				$product = 'seamonkey';
 				if ( ! isset( self::$products[ $product ] ) ) {
 					self::$products[ $product ] = new Mozlv_Product_SeaMonkey();
 				}
