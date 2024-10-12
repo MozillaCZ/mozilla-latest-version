@@ -152,6 +152,9 @@ abstract class Mozlv_Product_Class {
 			case 'win64':
 				$platform = 'win64';
 				break;
+			case 'msstore':
+				$platform = 'msstore';
+				break;
 			case 'linux':
 			case 'lin':
 				$platform = 'linux';
@@ -160,8 +163,15 @@ abstract class Mozlv_Product_Class {
 			case 'lin64':
 				$platform = 'linux64';
 				break;
-			case 'osx':
+			case 'flatpak':
+				$platform = 'flatpak';
+				break;
+			case 'snap':
+				$platform = 'snap';
+				break;
+			case 'macos':
 			case 'mac':
+			case 'osx':
 				$platform = 'osx';
 				break;
 		}

@@ -17,8 +17,8 @@ There are four shortcodes added by this plugin.
 * `[mozilla-latest-requirements-url product=product]` - requirements page URL for the latest version of the specified _product_
 
 ### Attributes
-* `product` possible values are `firefox` for desktop, `fenix`/`fennec`/`mobile` for Android, `ios` for iOS, `thunderbird` and `seamonkey`
-* `platform` specifies the platform for download links. Possible values are `win`, `win64`, `linux`, `lin`, `linux64`, `lin64`, `osx` and `mac`
+* `product`: `firefox` (Firefox for desktop), `fenix`/`fennec`/`mobile` (Firefox for Android), `ios` (Firefox for iOS), `thunderbird` and `seamonkey`
+* `platform`: `win`, `win64`, `msstore`, `linux`, `linux64`, `flatpak`, `snap`, `macos`
 * `channel` specifies the channel of product are is product dependent (if no specified, `release` will be used)
 
 #### Channel

@@ -15,7 +15,7 @@ class Mozlv_Product_SeaMonkey extends Mozlv_Product_Class {
 	// %1$s will be replaced by the product version
 	// %2$s will be replaced by the language
 	// %3$s will be replaced by the platform
-	protected $download_URL = 'https://download.mozilla.org/?product=seamonkey-%1$s&os=%3$s&lang=%2$s';
+	protected $download_URL = 'https://download.mozilla.org/?product=seamonkey-%1$s&os=%3$s&lang=%2$s<!--JUST A MARKER-->';
 	protected $langpack_URL = 'https://archive.seamonkey-project.org/releases/%1$s/langpack/seamonkey-%1$s.%2$s.langpack.xpi';
 	protected $changelog_URL = 'https://www.seamonkey-project.org/releases/seamonkey%1$s/';
 	protected $requirements_URL = 'https://www.seamonkey-project.org/doc/system-requirements';
