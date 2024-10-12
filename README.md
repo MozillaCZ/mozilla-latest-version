@@ -11,7 +11,6 @@ The plugin settings you can find in _WordPress Admin -> Options -> MOZLV Setting
 There are currently four shortcodes added by this plugin.
 
 * `[mozilla-latest-version product=product]` - the latest version number of the specified _product_
-These URL shortcodes below work also as [enclosing](https://codex.wordpress.org/Shortcode_API#Enclosing_vs_self-closing_shortcodes). Using `[shortcode]...[/shortcode]` will produce HTML link `<a href="URL">...</a>` instead of an URL string.
 * `[mozilla-latest-download-url product=product platform=platform]` - download URL of the latest version of the specified _product_ for _platform_
 * `[mozilla-latest-langpack-url product=product platform=platform]` - download URL of the latest langpack (.xpi) for the specified _product_ and _platform_ (not available for `fennec`)
 * `[mozilla-latest-changelog-url product=product]` - changelog page URL for the latest version of the specified _product_
