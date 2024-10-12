@@ -13,7 +13,7 @@ class Mozlv_Product_Focus_iOS extends Mozlv_Product_Class {
 	// %1$s will be replaced by the product version
 	// %2$s will be replaced by the language
 	// %3$s will be replaced by the platform
-	protected $download_URL = 'https://apps.apple.com/app/firefox-focus-privacy-browser/id1055677337';
+	protected $download_URL = 'https://apps.apple.com/app/firefox-focus-privacy-browser/id1055677337?l=%2$s';
 	protected $langpack_URL = '';
 	protected $changelog_URL = '';
 	protected $requirements_URL = 'https://support.mozilla.org/products/focus-firefox/Focus-ios';

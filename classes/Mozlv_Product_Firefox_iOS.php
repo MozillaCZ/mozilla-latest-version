@@ -13,7 +13,7 @@ class Mozlv_Product_Firefox_iOS extends Mozlv_Product_Class {
 	// %1$s will be replaced by the product version
 	// %2$s will be replaced by the language
 	// %3$s will be replaced by the platform
-	protected $download_URL = 'https://apps.apple.com/app/firefox-private-safe-browser/id989804926';
+	protected $download_URL = 'https://apps.apple.com/app/firefox-private-safe-browser/id989804926?l=%2$s';
 	protected $langpack_URL = '';
 	protected $changelog_URL = 'https://www.mozilla.org/%2$s/firefox/ios/%1$s/releasenotes/';
 	protected $requirements_URL = 'https://support.mozilla.org/kb/firefox-available-iphone-or-ipad-my-language';
