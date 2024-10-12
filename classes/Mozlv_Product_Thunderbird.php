@@ -26,11 +26,11 @@ class Mozlv_Product_Thunderbird extends Mozlv_Product_Class {
 
 	protected function get_latest_url( $url, $channel, $platform ) {
 		if ( $url == $this->download_URL ) {
-			if ( $platform == 'msstore' && channel == 'release' ) {
+			if ( $platform == 'msstore' && $channel == 'release' ) {
 				return 'https://apps.microsoft.com/detail/9pm5vm1s3vmq';
-			} else if ( $platform == 'flatpak' && channel == 'release' ) {
+			} else if ( $platform == 'flatpak' && $channel == 'release' ) {
 				return 'https://flathub.org/apps/details/org.mozilla.Thunderbird';
-			} else if ( $platform == 'snap' && channel == 'release' ) {
+			} else if ( $platform == 'snap' && $channel == 'release' ) {
 				return 'https://snapcraft.io/thunderbird';
 			}
 		}

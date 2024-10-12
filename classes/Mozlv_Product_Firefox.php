@@ -29,13 +29,13 @@ class Mozlv_Product_Firefox extends Mozlv_Product_Class {
 
 	protected function get_latest_url( $url, $channel, $platform ) {
 		if ( $url == $this->download_URL ) {
-			if ( $platform == 'msstore' && channel == 'release' ) {
+			if ( $platform == 'msstore' && $channel == 'release' ) {
 				return 'https://apps.microsoft.com/detail/9nzvdkpmr9rd';
-			} else if ( $platform == 'msstore' && channel == 'beta' ) {
+			} else if ( $platform == 'msstore' && $channel == 'beta' ) {
 				return 'https://apps.microsoft.com/detail/9nzw26frndln';
-			} else if ( $platform == 'flatpak' && channel == 'release' ) {
+			} else if ( $platform == 'flatpak' && $channel == 'release' ) {
 				return 'https://flathub.org/apps/details/org.mozilla.firefox';
-			} else if ( $platform == 'snap' && channel == 'release' ) {
+			} else if ( $platform == 'snap' && $channel == 'release' ) {
 				return 'https://snapcraft.io/firefox';
 			} else if ( $channel == 'devedition' ) {
 				return parent::get_latest_url( 'https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=%3$s&lang=%2$s', $channel, $platform );
