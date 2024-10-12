@@ -27,10 +27,9 @@ class Mozlv_Settings_Page {
 		$plugin_data = get_plugin_data( MOZLV_PLUGIN_FILE );
 		printf( '<h2>%s</h2>', $plugin_data['Name'] );
 		printf( '<p>%s</p>', $plugin_data['Description'] );
+		printf( '<p><a href="%s" target="_blank">How to use it?</a></p>', $plugin_data['PluginURI'] );
 		print( '<h2>Settings</h2>' );
 		$this->main_settings();
-		print( '<h2>How to use it?</h2>' );
-		$this->main_howto();
 
 		print( '</div>' );
 	}
@@ -104,48 +103,6 @@ class Mozlv_Settings_Page {
 		} else {
 			return '';
 		}
-	}
-
-	/**
-	 * Outputs main plugin admin page how to HTML code.
-	 */
-	private function main_howto() {
-		print('
-			<p>There are currently four shortcodes added by this plugin. And three more additional for easier migration from the Mozilla.sk CMS Plugin without need of any content change. Here are explained all of them with their attributes.</p>
-			<h3 class="title">Shortcodes</h3>
-			<p class="description">All URLs (where posible) will contain the language code specified above.</p>
-			<ul>
-				<li><code>[mozilla-latest-version product=<em>product</em>]</code> - the latest version number of the specified <em>product</em></li>
-			</ul>
-			<p class="description">These URL shortcodes below work also as <a href="https://codex.wordpress.org/Shortcode_API#Enclosing_vs_self-closing_shortcodes" target="_blank">enclosing</a>. Using <code>[shortcode]...[/shortcode]</code> will produce HTML link <code>&lt;a href="URL"&gt;...&lt;/a&gt;</code> instead of an URL string.</p>
-			<ul>
-				<li><code>[mozilla-latest-download-url product=<em>product</em> platform=<em>platform</em>]</code> - download URL of the latest version of the specified <em>product</em> for <em>platform</em></li>
-				<li><code>[mozilla-latest-langpack-url product=<em>product</em> platform=<em>platform</em>]</code> - download URL of the latest langpack (.xpi) for the specified <em>product</em> and <em>platform</em> (not available for <code>fennec</code>)</li>
-				<li><code>[mozilla-latest-changelog-url product=<em>product</em>]</code> - changelog page URL for the latest version of the specified <em>product</em></li>
-				<li><code>[mozilla-latest-requirements-url product=<em>product</em>]</code> - requirements page URL for the latest version of the specified <em>product</em></li>
-			</ul>
-			<h4>Shortcodes for easier migration from the Mozilla.sk CMS Plugin</h4>
-			<p class="description">The Mozilla.sk CMS plugin shortcodes work as <a href="https://codex.wordpress.org/Shortcode_API#Enclosing_vs_self-closing_shortcodes" target="_blank">self-closing</a> only.</p>
-			<ul>
-				<li><code>[moz-download-version app=<em>product</em>]</code> = <code>[mozilla-latest-version product=<em>product</em>]</code></li>
-				<li><code>[moz-download-url app=<em>product</em> platform=<em>platform</em>]</code> = <code>[mozilla-latest-download-url product=<em>product</em> platform=<em>platform</em>]</code></li>
-				<li><code>[moz-download-rn app=<em>product</em>]</code> = <code>[mozilla-latest-changelog-url product=<em>product</em>]</code></li>
-			</ul>
-			<h3 class="title">Attributes</h3>
-			<ul>
-				<li><code>product</code> possible values are <code>firefox</code> for desktop, <code>fennec</code> or <code>mobile</code> for Android, <code>ios</code> for iOS, <code>thunderbird</code> and <code>seamonkey</code></li>
-				<li><code>platform</code> specifies the platform for download links. Possible values are <code>win</code>, <code>win64</code>, <code>linux</code>, <code>lin</code>, <code>linux64</code>, <code>lin64</code>, <code>osx</code> and <code>mac</code></li>
-				<li><code>channel</code> specifies the channel of product are is product dependent (if no specified, <code>release</code> will be used)</li>
-			</ul>
-			<h3 class="title">Channel</h3>
-			<ul>
-				<li>Firefox: <code>release</code>, <code>beta</code>, <code>devedition</code>, <code>nightly</code>, <code>esr</code></li>
-				<li>Mobile: <code>release</code>, <code>beta</code>, <code>nightly</code></li>
-				<li>iOS: <code>release</code>, <code>beta</code></li>
-				<li>Thundebird: <code>release</code>, <code>beta</code></li>
-				<li>SeaMonkey: <code>release</code>, <code>beta</code></li>
-			</ul>
-		');
 	}
 
 }

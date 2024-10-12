@@ -83,46 +83,6 @@ class Mozlv_Shortcode {
 	}
 
 	/**
-	 * Returns latest product version in channel for platform (for Mozilla.sk CMS Plugin compatibility).
-	 * 
-	 * @param array $atts shortcode attributes
-	 * @return string product version
-	 */
-	public static function moz_download_version_handler( $atts ) {
-		$atts = self::mozsk_atts( $atts );
-		return self::get_latest_version( $atts );
-	}
-
-	/**
-	 * Returns latest product download URL in channel for platform (for Mozilla.sk CMS Plugin compatibility).
-	 * 
-	 * @param array $atts shortcode attributes
-	 * @return string product download URL
-	 */
-	public static function moz_download_url_handler( $atts ) {
-		$atts = self::mozsk_atts( $atts );
-		if ( $atts == NULL ) {
-			return;
-		}
-		if ( $atts['platform'] == 'port' ) {
-			return self::get_latest_langpack_URL( $atts );
-		} else {
-			return self::get_latest_download_URL( $atts );
-		}
-	}
-
-	/**
-	 * Returns latest product changelog/release notes URL in channel for platform (for Mozilla.sk CMS Plugin compatibility).
-	 * 
-	 * @param array $atts shortcode attributes
-	 * @return string product changelog URL
-	 */
-	public static function moz_download_rn_handler( $atts ) {
-		$atts = self::mozsk_atts( $atts );
-		return self::get_latest_changelog_URL( $atts );
-	}
-
-	/**
 	 * Fix shortcode attributes.
 	 * 
 	 * @param array $atts shortcode attributes
@@ -137,25 +97,6 @@ class Mozlv_Shortcode {
 			),
 			$atts
 		);
-		return $atts;
-	}
-
-	/**
-	 * Fix shortcode attributes for Mozilla.sk CMS Plugin compatibility.
-	 * 
-	 * @param array $atts shortcode attributes
-	 * @return array $atts shortcode attributes
-	 */
-	private static function mozsk_atts( $atts ) {
-		$atts = shortcode_atts(
-			array(
-				'app'      => NULL,
-				'platform' => NULL,
-				'channel'  => NULL,
-			),
-			$atts
-		);
-		$atts['product'] = $atts['app'];
 		return $atts;
 	}
 

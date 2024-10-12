@@ -4,7 +4,7 @@ Plugin Name:		Mozilla Latest Version
 Plugin URI:		https://github.com/MozillaCZ/mozilla-latest-version
 Update URI:		https://api.github.com/repos/MozillaCZ/mozilla-latest-version/releases/latest
 Description:		Mozilla Latest Version WordPress plugin automatically checks the Mozilla application JSONs so you can always have the latest download link and version number on your website.
-Version:		2.0.2
+Version:		3.0.0
 Author:			Mozilla.cz
 Author URI:		https://www.mozilla.cz/
 License:		GPL2
@@ -49,8 +49,3 @@ add_shortcode( 'mozilla-latest-download-url', array('Mozlv_Shortcode', 'get_late
 add_shortcode( 'mozilla-latest-langpack-url', array('Mozlv_Shortcode', 'get_latest_langpack_URL') );
 add_shortcode( 'mozilla-latest-changelog-url', array('Mozlv_Shortcode', 'get_latest_changelog_URL') );
 add_shortcode( 'mozilla-latest-requirements-url', array('Mozlv_Shortcode', 'get_latest_requirements_URL') );
-
-// Shortcodes for Mozilla.sk CMS Plugin compatibility
-add_shortcode( 'moz-download-version', array('Mozlv_Shortcode', 'moz_download_version_handler') );
-add_shortcode( 'moz-download-url', array('Mozlv_Shortcode', 'moz_download_url_handler') );
-add_shortcode( 'moz-download-rn', array('Mozlv_Shortcode', 'moz_download_rn_handler') );
