@@ -150,6 +150,9 @@ abstract class Mozlv_Product_Class {
 			case 'win64':
 				$platform = 'win64';
 				break;
+			case 'win64arm':
+				$platform = 'win64-aarch64';
+				break;
 			case 'msstore':
 				$platform = 'msstore';
 				break;

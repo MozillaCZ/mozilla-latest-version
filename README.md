@@ -18,7 +18,7 @@ There are four shortcodes added by this plugin.
 
 ### Attributes
 * `product`: `firefox` (Firefox for desktop), `firefox-android`/`mobile`/`fenix`/`fennec`, `firefox-ios`/`ios`, `focus-android`, `focus-ios`, `thunderbird` and `seamonkey`
-* `platform`: `win`, `win64`, `msstore`, `linux`, `linux64`, `flatpak`, `snap`, `macos`
+* `platform`: `win`, `win64`, `win64arm`, `msstore`, `linux`, `linux64`, `flatpak`, `snap`, `macos`
 * `channel` specifies the channel of product are is product dependent (if no specified, `release` will be used)
 
 #### Channel
