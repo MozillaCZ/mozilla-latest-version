@@ -27,5 +27,5 @@ There are four shortcodes added by this plugin.
 * Firefox for iOS: `release`, `beta`
 * Focus for Android: `release`, `beta`
 * Focus for iOS: `release`, `beta`
-* Thundebird: `release`, `beta`
+* Thundebird: `release`, `beta`, `esr`
 * SeaMonkey: `release`, `beta`

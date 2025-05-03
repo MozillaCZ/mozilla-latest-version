@@ -9,6 +9,7 @@ class Mozlv_Product_Thunderbird extends Mozlv_Product_Class {
 	protected $channel_to_resource_index = array (
 										'release' => 'LATEST_THUNDERBIRD_VERSION',
 										'beta' => 'LATEST_THUNDERBIRD_DEVEL_VERSION',
+										'esr' => 'THUNDERBIRD_ESR',
 									);
 	// %1$s will be replaced by the product version
 	// %2$s will be replaced by the language
