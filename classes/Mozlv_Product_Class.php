@@ -164,6 +164,10 @@ abstract class Mozlv_Product_Class {
 			case 'lin64':
 				$platform = 'linux64';
 				break;
+			case 'linux64arm':
+			case 'lin64arm':
+				$platform = 'linux64-aarch64';
+				break;
 			case 'flatpak':
 				$platform = 'flatpak';
 				break;
